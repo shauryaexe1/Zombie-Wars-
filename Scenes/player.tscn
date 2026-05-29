@@ -90,7 +90,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_3smsa")
 }],
 "loop": true,
-"name": &"Idle ",
+"name": &"Idle",
 "speed": 10.0
 }, {
 "frames": [{
@@ -125,24 +125,28 @@ animations = [{
 "texture": SubResource("AtlasTexture_qqcod")
 }],
 "loop": true,
-"name": &"Run ",
+"name": &"Run",
 "speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1ek2"]
-size = Vector2(26, 70)
+size = Vector2(10, 24)
 
 [node name="Player" type="CharacterBody2D" unique_id=327069013]
 motion_mode = 1
 script = ExtResource("1_cvnsp")
-movement_speed = 150.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1925404493]
-position = Vector2(1, -65)
+z_index = 2
+position = Vector2(3.0000002, -13.000002)
+scale = Vector2(0.35156247, 0.3203125)
 sprite_frames = SubResource("SpriteFrames_8erm5")
-animation = &"Run "
-autoplay = "Idle "
+animation = &"Run"
+autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2044032194]
-position = Vector2(-5, -36)
+position = Vector2(-1, -4)
 shape = SubResource("RectangleShape2D_f1ek2")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1318759121]
+zoom = Vector2(4, 4)

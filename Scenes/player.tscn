@@ -130,7 +130,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1ek2"]
-size = Vector2(10, 24)
+size = Vector2(7, 15)
 
 [node name="Player" type="CharacterBody2D" unique_id=327069013]
 motion_mode = 1
@@ -138,15 +138,15 @@ script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1925404493]
 z_index = 2
-position = Vector2(3.0000002, -13.000002)
-scale = Vector2(0.35156247, 0.3203125)
+position = Vector2(0, -4)
+scale = Vector2(0.22265624, 0.20703125)
 sprite_frames = SubResource("SpriteFrames_8erm5")
 animation = &"Run"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2044032194]
-position = Vector2(-1, -4)
+position = Vector2(-2, 2)
 shape = SubResource("RectangleShape2D_f1ek2")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1318759121]
-zoom = Vector2(4, 4)
+zoom = Vector2(5, 5)

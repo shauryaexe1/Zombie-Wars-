@@ -205,6 +205,7 @@ size = Vector2(7.5, 2.75)
 script = ExtResource("1_w2xga")
 
 [node name="Player" parent="." unique_id=327069013 instance=ExtResource("2_5ia6i")]
+position = Vector2(-29, -9)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=780978589]
 position = Vector2(-1.2500012, -13.750001)

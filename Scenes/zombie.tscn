@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dkndciuis16i7" path="res://Assests/Free-Urban-Zombie-Sprite-Sheet-Pixel-Art-Pack/Zombie_1/Walk.png" id="1_h3kin"]
 [ext_resource type="Script" uid="uid://dfme052gfbjwx" path="res://Scenes/zombie.gd" id="1_w2xga"]
 [ext_resource type="Texture2D" uid="uid://k6jab7yy0lxj" path="res://Assests/Free-Urban-Zombie-Sprite-Sheet-Pixel-Art-Pack/Zombie_1/Attack.png" id="2_4slyf"]
-[ext_resource type="PackedScene" uid="uid://ccke6ntfyfipo" path="res://Scenes/player.tscn" id="2_5ia6i"]
 [ext_resource type="Texture2D" uid="uid://dfvhft6nnx3h5" path="res://Assests/Free-Urban-Zombie-Sprite-Sheet-Pixel-Art-Pack/Zombie_1/Dead.png" id="3_5ia6i"]
 [ext_resource type="Texture2D" uid="uid://dkb0bmnd1rbv" path="res://Assests/Free-Urban-Zombie-Sprite-Sheet-Pixel-Art-Pack/Zombie_1/Hurt.png" id="4_xx3wb"]
 
@@ -202,17 +201,27 @@ animations = [{
 size = Vector2(7.5, 2.75)
 
 [node name="Zombie" type="CharacterBody2D" unique_id=1703867043]
+collision_layer = 2
+collision_mask = 3
+motion_mode = 1
 script = ExtResource("1_w2xga")
-
-[node name="Player" parent="." unique_id=327069013 instance=ExtResource("2_5ia6i")]
-position = Vector2(-29, -9)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=780978589]
 position = Vector2(-1.2500012, -13.750001)
 scale = Vector2(0.20703124, 0.20703124)
 sprite_frames = SubResource("SpriteFrames_fj6an")
 animation = &"Walk"
+frame = 3
+frame_progress = 0.93182147
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=709053964]
 position = Vector2(-2, -1)
 shape = SubResource("RectangleShape2D_tmcj1")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=624432139]
+debug_enabled = true
+
+[node name="Timer" type="Timer" parent="." unique_id=318143721]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

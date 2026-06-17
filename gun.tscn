@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://da5isopfggawu"]
+
+[ext_resource type="Texture2D" uid="uid://b0wguf5oox68f" path="res://Assests/Shotgun FREE/shotgun1-Sheet.png" id="1_vk1bi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dk5gl"]
+radius = 17.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw0bs"]
+atlas = ExtResource("1_vk1bi")
+region = Rect2(0, 0, 64, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8iju2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kw0bs")
+}],
+"loop": true,
+"name": &"Gun",
+"speed": 5.0
+}]
+
+[node name="Gun" type="Area2D" unique_id=1484658533]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2003941940]
+shape = SubResource("CircleShape2D_dk5gl")
+
+[node name="WeaponPivot" type="Marker2D" parent="." unique_id=335028395]
+
+[node name="Shotgun" type="AnimatedSprite2D" parent="WeaponPivot" unique_id=1385587619]
+position = Vector2(1.000001, -1)
+scale = Vector2(0.13999999, 0.14)
+sprite_frames = SubResource("SpriteFrames_8iju2")
+animation = &"Gun"
+
+[node name="Shooting Point" type="Marker2D" parent="WeaponPivot/Shotgun" unique_id=50525463]
+position = Vector2(7.142854, 0)

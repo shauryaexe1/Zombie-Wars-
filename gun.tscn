@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bnavo4cwp6x27" path="res://gun.gd" id="1_dk5gl"]
 [ext_resource type="Texture2D" uid="uid://b0wguf5oox68f" path="res://Assests/Shotgun FREE/shotgun1-Sheet.png" id="1_vk1bi"]
+[ext_resource type="PackedScene" uid="uid://d08oqy6k4rkjv" path="res://Scenes/bullet.tscn" id="3_kw0bs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dk5gl"]
 radius = 17.0
@@ -22,8 +23,8 @@ animations = [{
 }]
 
 [node name="Gun" type="Area2D" unique_id=1484658533]
-collision_layer = 0
-collision_mask = 4
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_dk5gl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2003941940]
@@ -32,10 +33,14 @@ shape = SubResource("CircleShape2D_dk5gl")
 [node name="WeaponPivot" type="Marker2D" parent="." unique_id=335028395]
 
 [node name="Shotgun" type="AnimatedSprite2D" parent="WeaponPivot" unique_id=1385587619]
-position = Vector2(1.000001, -1)
+position = Vector2(2, -1)
 scale = Vector2(0.13999999, 0.14)
 sprite_frames = SubResource("SpriteFrames_8iju2")
 animation = &"Gun"
 
 [node name="Shooting Point" type="Marker2D" parent="WeaponPivot/Shotgun" unique_id=50525463]
+unique_name_in_owner = true
 position = Vector2(7.142854, 0)
+
+[node name="Bullet" parent="WeaponPivot/Shotgun/Shooting Point" unique_id=200049140 instance=ExtResource("3_kw0bs")]
+position = Vector2(14.285719, -9.536743e-07)

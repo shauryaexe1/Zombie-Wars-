@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://dcxlrntu0emya"]
 
 [ext_resource type="PackedScene" uid="uid://ccke6ntfyfipo" path="res://Scenes/player.tscn" id="1_l756w"]
-[ext_resource type="PackedScene" uid="uid://da5isopfggawu" path="res://gun.tscn" id="2_bb2iq"]
 [ext_resource type="PackedScene" uid="uid://cwj0lom2svwqg" path="res://Scenes/zombie.tscn" id="2_mgc0q"]
 [ext_resource type="Texture2D" uid="uid://bn3k3c30rnvld" path="res://Assests/desertdoodles.png" id="2_pu3va"]
 [ext_resource type="Texture2D" uid="uid://bi7krufgnhklm" path="res://Assests/brackeys_platformer_assets/sprites/world_tileset.png" id="3_0e3vx"]
@@ -667,9 +666,6 @@ position = Vector2(26, 100)
 
 [node name="Camera2D2" type="Camera2D" parent="Player" unique_id=2143763459]
 position = Vector2(38, -1)
-
-[node name="Gun2" parent="Player" unique_id=1484658533 instance=ExtResource("2_bb2iq")]
-collision_layer = 4
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1933549553]
 navigation_polygon = SubResource("NavigationPolygon_mgc0q")

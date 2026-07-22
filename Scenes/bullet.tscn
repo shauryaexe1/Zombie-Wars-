@@ -13,6 +13,7 @@ collision_mask = 3
 script = ExtResource("1_oduel")
 
 [node name="Bullet" type="Sprite2D" parent="." unique_id=1948303937]
+z_index = 1
 position = Vector2(-2.0467777, 5.9842052)
 scale = Vector2(0.06234931, 0.06302487)
 texture = ExtResource("2_ycag2")

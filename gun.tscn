@@ -33,14 +33,21 @@ shape = SubResource("CircleShape2D_dk5gl")
 [node name="WeaponPivot" type="Marker2D" parent="." unique_id=335028395]
 
 [node name="Shotgun" type="AnimatedSprite2D" parent="WeaponPivot" unique_id=1385587619]
+z_index = 2
 position = Vector2(2, -1)
 scale = Vector2(0.13999999, 0.14)
 sprite_frames = SubResource("SpriteFrames_8iju2")
 animation = &"Gun"
 
-[node name="Shooting Point" type="Marker2D" parent="WeaponPivot/Shotgun" unique_id=50525463]
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Shotgun" unique_id=50525463]
 unique_name_in_owner = true
 position = Vector2(7.142854, 0)
 
-[node name="Bullet" parent="WeaponPivot/Shotgun/Shooting Point" unique_id=200049140 instance=ExtResource("3_kw0bs")]
-position = Vector2(14.285719, -9.536743e-07)
+[node name="Bullet" parent="WeaponPivot/Shotgun/ShootingPoint" unique_id=200049140 instance=ExtResource("3_kw0bs")]
+position = Vector2(14.285719, -1.0217934e-07)
+
+[node name="Timer" type="Timer" parent="." unique_id=1060754027]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

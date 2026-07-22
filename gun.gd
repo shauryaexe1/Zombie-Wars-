@@ -10,9 +10,10 @@ func _physics_process(delta):
 
 func shoot():
 	const BULLET = preload("res://Scenes/bullet.tscn")
-	var new_bullet = BULLET .instantiate()
+	var new_bullet = BULLET.instantiate()
 	new_bullet.global_position = %ShootingPoint.global_position
-	%ShootingPoint.add_child(new_bullet)
+	new_bullet.global_rotation = global_rotation
+	%ShootingPoint.add_child(new_bullet) 
 
 
 func _on_timer_timeout() -> void:

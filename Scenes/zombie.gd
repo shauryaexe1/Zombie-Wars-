@@ -1,5 +1,6 @@
 extends CharacterBody2D
 const speed = 40
+var health = 2
 
 @export var player: Node2D
 @onready var nav_agent := $NavigationAgent2D as NavigationAgent2D
@@ -29,4 +30,12 @@ func makepath() -> void:
 
 func _on_timer_timeout() -> void:
 	makepath()
+	
+func take_damage():
+	health -= 1
+	
+	if health == 0:
+		queue_free()
+	
+
 	

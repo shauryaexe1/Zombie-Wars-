@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bsth7kochv6sb" path="res://Assests/bullet.png" id="2_ycag2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4mw4s"]
-radius = 2.2360682
+radius = 1.0
 
 [node name="Bullet" type="Area2D" unique_id=200049140]
 rotation = -0.0078064203
@@ -13,13 +13,12 @@ collision_mask = 3
 script = ExtResource("1_oduel")
 
 [node name="Bullet" type="Sprite2D" parent="." unique_id=1948303937]
-z_index = 1
-position = Vector2(-2.0467777, 5.9842052)
-scale = Vector2(0.06234931, 0.06302487)
+z_index = 5
+position = Vector2(72.92048, 138.57347)
 texture = ExtResource("2_ycag2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1233461162]
-position = Vector2(-3.9764605, -3.0311332)
+position = Vector2(-0.9765506, -3.007716)
 rotation = 1.061401
 shape = SubResource("CircleShape2D_4mw4s")
 

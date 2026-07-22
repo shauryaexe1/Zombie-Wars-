@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d08oqy6k4rkjv" path="res://Scenes/bullet.tscn" id="3_kw0bs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dk5gl"]
-radius = 17.0
+radius = 121.037186
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kw0bs"]
 atlas = ExtResource("1_vk1bi")
@@ -44,7 +44,8 @@ unique_name_in_owner = true
 position = Vector2(7.142854, 0)
 
 [node name="Bullet" parent="WeaponPivot/Shotgun/ShootingPoint" unique_id=200049140 instance=ExtResource("3_kw0bs")]
-position = Vector2(14.285719, -1.0217934e-07)
+visible = false
+position = Vector2(7.000001, 1.9999999)
 
 [node name="Timer" type="Timer" parent="." unique_id=1060754027]
 wait_time = 0.3

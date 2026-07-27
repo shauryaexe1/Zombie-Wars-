@@ -14,11 +14,12 @@ script = ExtResource("1_oduel")
 
 [node name="Bullet" type="Sprite2D" parent="." unique_id=1948303937]
 z_index = 5
-position = Vector2(72.92048, 138.57347)
+position = Vector2(-0.0078065395, 0.9999695)
+scale = Vector2(0.01, 0.01)
 texture = ExtResource("2_ycag2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1233461162]
-position = Vector2(-0.9765506, -3.007716)
+position = Vector2(1.1920929e-07, 0)
 rotation = 1.061401
 shape = SubResource("CircleShape2D_4mw4s")
 

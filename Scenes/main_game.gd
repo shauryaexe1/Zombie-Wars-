@@ -15,3 +15,7 @@ func spawn_mob():
 	new_zombie.global_position = %PathFollow2D.global_position
 	new_zombie.player=player
 	add_child(new_zombie)
+
+
+func _on_timer_timeout() -> void:
+	spawn_mob()

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://da5isopfggawu"]
 
-[ext_resource type="Script" uid="uid://bnavo4cwp6x27" path="res://gun.gd" id="1_dk5gl"]
+[ext_resource type="Script" uid="uid://bnavo4cwp6x27" path="res://Scripts/gun.gd" id="1_dk5gl"]
 [ext_resource type="Texture2D" uid="uid://b0wguf5oox68f" path="res://Assests/Shotgun FREE/shotgun1-Sheet.png" id="1_vk1bi"]
 [ext_resource type="PackedScene" uid="uid://d08oqy6k4rkjv" path="res://Scenes/bullet.tscn" id="3_kw0bs"]
 

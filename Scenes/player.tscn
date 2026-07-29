@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://gw5v7gquldmt" path="res://All design/gangster-pixel-character-sprite-sheets-pack 3/Gangsters_1/Dead.png" id="2_fkybt"]
 [ext_resource type="Texture2D" uid="uid://vul21817rd0s" path="res://All design/gangster-pixel-character-sprite-sheets-pack 3/Gangsters_1/Run.png" id="3_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://c3j2v5powyco1" path="res://All design/gangster-pixel-character-sprite-sheets-pack 3/Gangsters_1/Hurt.png" id="3_x3wgy"]
-[ext_resource type="PackedScene" uid="uid://da5isopfggawu" path="res://gun.tscn" id="6_x3wgy"]
+[ext_resource type="PackedScene" uid="uid://da5isopfggawu" path="res://Scenes/gun.tscn" id="6_x3wgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_igrcy"]
 atlas = ExtResource("2_fkybt")
@@ -262,7 +262,7 @@ collision_mask = 8
 [node name="DamageArea" type="Area2D" parent="." unique_id=1369483751]
 unique_name_in_owner = true
 collision_layer = 10
-collision_mask = 3
+collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=886347479]
 position = Vector2(-1, 1)
@@ -271,6 +271,7 @@ debug_color = Color(0.99907476, 0, 0.1373277, 0.41960785)
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=307877517]
 unique_name_in_owner = true
+z_index = 5
 offset_left = -8.000004
 offset_top = -12.999999
 offset_right = 76.0

@@ -129,7 +129,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wpjfl")
 }],
-"loop": true,
+"loop": false,
 "name": &"Dead",
 "speed": 5.0
 }, {
@@ -241,11 +241,12 @@ motion_mode = 1
 script = ExtResource("1_cvnsp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1925404493]
+unique_name_in_owner = true
 z_index = 2
 position = Vector2(0, -4)
 scale = Vector2(0.22265624, 0.20703125)
 sprite_frames = SubResource("SpriteFrames_8erm5")
-animation = &"Hurt"
+animation = &"Dead"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2044032194]

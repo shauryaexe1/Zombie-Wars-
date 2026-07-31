@@ -217,7 +217,6 @@ position = Vector2(-2, -1)
 shape = SubResource("RectangleShape2D_tmcj1")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=624432139]
-debug_enabled = true
 
 [node name="Timer" type="Timer" parent="." unique_id=318143721]
 autostart = true

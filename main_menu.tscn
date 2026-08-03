@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c3ovnfqlue0uj"]
+
+[ext_resource type="Script" uid="uid://dcbrsgw5yt6hi" path="res://main_menu.gd" id="1_06t4h"]
+
+[node name="Main Menu" type="Node2D" unique_id=2051416741]
+script = ExtResource("1_06t4h")
+
+[node name="Button_Manager" type="Control" parent="." unique_id=827543213]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Game Start" type="Button" parent="Button_Manager" unique_id=1306926671]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Upgrade Menu" type="Button" parent="Button_Manager" unique_id=2057120693]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Exit" type="Button" parent="Button_Manager" unique_id=2063070867]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0

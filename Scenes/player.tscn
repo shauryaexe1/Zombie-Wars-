@@ -282,3 +282,5 @@ theme_override_styles/background = SubResource("StyleBoxFlat_x3wgy")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3smsa")
 value = 100.0
 show_percentage = false
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animation_finish"]

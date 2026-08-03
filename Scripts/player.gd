@@ -44,3 +44,9 @@ func take_damage(delta: float, damage: float, mob_count: int):
 			health -= damage * mob_count * delta
 			%ProgressBar.value = health
 			animated_sprite.play("Hurt")
+
+
+func _on_animation_finish() -> void:
+	if animated_sprite.animation=="Dead":
+		get_tree().change_scene_to_file("res://Scenes/Game.Over.r.tscn")
+	

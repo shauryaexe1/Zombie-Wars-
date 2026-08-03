@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://clyp3yfmqvf4k"]
 
+[ext_resource type="Script" uid="uid://cnm6pgjr1uhp6" path="res://Scenes/game.over.r.gd" id="1_2fu2x"]
+[ext_resource type="Texture2D" uid="uid://1oyfcitu61ir" path="res://Scenes/Gameover.png" id="1_amdd6"]
+
 [node name="CanvasLayer" type="CanvasLayer" unique_id=665774702]
+script = ExtResource("1_2fu2x")
 
 [node name="Control" type="Control" parent="." unique_id=573962187]
 layout_mode = 3
@@ -10,7 +14,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="Control" unique_id=1086191301]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="Try Again" type="Button" parent="Control" unique_id=1086191301]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.291
+anchor_top = 0.915
+anchor_right = 0.492
+anchor_bottom = 0.94100004
+offset_left = -10.231995
+offset_top = -7.920044
+offset_right = 8.216003
+offset_bottom = 24.231995
+
+[node name="Main Menu" type="Button" parent="Control/Try Again" unique_id=2055423265]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.23
+anchor_top = 0.238
+anchor_right = 2.022
+anchor_bottom = 0.77900004
+offset_left = -14.5
+offset_top = -11.662001
+offset_right = 8.4999695
+offset_bottom = 9.828999
+
+[node name="GameOver PNG" type="Sprite2D" parent="Control" unique_id=832125064]
+position = Vector2(577.5, 325)
+scale = Vector2(0.83357567, 0.8333334)
+texture = ExtResource("1_amdd6")
+
+[connection signal="pressed" from="Control/Try Again" to="." method="_click_replay"]
+[connection signal="pressed" from="Control/Try Again/Main Menu" to="." method="_Main_menu"]

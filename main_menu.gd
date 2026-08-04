@@ -1,13 +1,26 @@
 extends Node2D
 
+var button_type = null
 
 func _on_game_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/main_game.tscn")
+	button_type = "start_game"
+	$Fade_Transition.show()
+	$Fade_Transition/Fade_timer.start()
+	$Fade_Transition/AnimationPlayer.play("fade_in")
 
 
 func _on_upgrade_menu_pressed() -> void:
-	pass # Replace with function body.
-
+	button_type = "upgrade_menu"
+	$Fade_Transition.show()
+	$Fade_Transition/Fade_timer.start()
+	$Fade_Transition/AnimationPlayer.play("fade_in")
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_fade_timer_timeout() -> void:
+	if button_type == "start_game":
+		get_tree().change_scene_to_file("res://Scenes/main_game.tscn")
+		
+	

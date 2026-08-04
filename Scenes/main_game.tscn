@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bn3k3c30rnvld" path="res://Assests/desertdoodles.png" id="2_pu3va"]
 [ext_resource type="Texture2D" uid="uid://bi7krufgnhklm" path="res://Assests/brackeys_platformer_assets/sprites/world_tileset.png" id="3_0e3vx"]
 [ext_resource type="Texture2D" uid="uid://bpetror8dce71" path="res://Assests/Cactus_Sprite_Sheet.png" id="4_6j5ir"]
+[ext_resource type="PackedScene" uid="uid://cfv8fsmect71w" path="res://Scenes/fade_transition.tscn" id="7_18r40"]
 
 [sub_resource type="Curve2D" id="Curve2D_18r40"]
 _data = {
@@ -740,5 +741,8 @@ player = NodePath("../Player")
 [node name="Timer" type="Timer" parent="." unique_id=1969114137]
 wait_time = 1.0419999999999998
 autostart = true
+
+[node name="Fade_Transition" parent="." unique_id=1140905974 instance=ExtResource("7_18r40")]
+visible = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

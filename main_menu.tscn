@@ -1,6 +1,20 @@
 [gd_scene format=3 uid="uid://c3ovnfqlue0uj"]
 
 [ext_resource type="Script" uid="uid://dcbrsgw5yt6hi" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://lai1hyutcu5v" path="res://Button Srt/Screenshot 2026-08-04 at 11.02.44 PM.png" id="2_nlkkf"]
+[ext_resource type="Texture2D" uid="uid://bf2tottwnbjfm" path="res://Button Srt/Screenshot 2026-08-04 at 11.02.57 PM.png" id="3_qe12f"]
+[ext_resource type="Texture2D" uid="uid://fwwrv8siu0tj" path="res://Button Srt/Screenshot 2026-08-04 at 11.03.08 PM.png" id="4_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://khjwqc3vrfkj" path="res://Button Srt/Screenshot 2026-08-04 at 11.19.11 PM.png" id="5_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://dxjdx5e05wggk" path="res://Button Srt/Screenshot 2026-08-04 at 11.19.26 PM.png" id="6_0o4t1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0k4wn"]
+load_path = "res://.godot/imported/Screenshot 2026-08-04 at 11.01.39 PM.png-a5589e492192d4941ff0b6dc54500382.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j5v2v"]
+load_path = "res://.godot/imported/Screenshot 2026-08-04 at 11.02.07 PM.png-4134d22362b8172375644ac90d629143.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iotk1"]
+load_path = "res://.godot/imported/Screenshot 2026-08-04 at 11.02.33 PM.png-97f3cacf10752baf420e7b5c0f3e6553.ctex"
 
 [node name="Main Menu" type="Node2D" unique_id=2051416741]
 script = ExtResource("1_06t4h")
@@ -11,17 +25,35 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Game Start" type="Button" parent="Button_Manager" unique_id=1306926671]
+[node name="Game Start" type="TextureButton" parent="Button_Manager" unique_id=1648912826]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 337.0
+offset_top = 143.0
+offset_right = 887.0
+offset_bottom = 261.0
+texture_normal = SubResource("CompressedTexture2D_0k4wn")
+texture_pressed = SubResource("CompressedTexture2D_j5v2v")
+texture_hover = SubResource("CompressedTexture2D_iotk1")
 
-[node name="Upgrade Menu" type="Button" parent="Button_Manager" unique_id=2057120693]
+[node name="Upgrade Menu" type="TextureButton" parent="Button_Manager" unique_id=1066961940]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 333.0
+offset_top = 247.0
+offset_right = 919.0
+offset_bottom = 411.0
+texture_normal = ExtResource("2_nlkkf")
+texture_pressed = ExtResource("3_qe12f")
+texture_hover = ExtResource("4_8qtwp")
 
-[node name="Exit" type="Button" parent="Button_Manager" unique_id=2063070867]
+[node name="Exit" type="TextureButton" parent="Button_Manager" unique_id=764141367]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 320.0
+offset_top = 411.0
+offset_right = 906.0
+offset_bottom = 587.0
+texture_normal = ExtResource("5_dy7ct")
+texture_pressed = ExtResource("6_0o4t1")
+
+[connection signal="pressed" from="Button_Manager/Game Start" to="." method="_on_game_start_pressed"]
+[connection signal="pressed" from="Button_Manager/Upgrade Menu" to="." method="_on_upgrade_menu_pressed"]
+[connection signal="pressed" from="Button_Manager/Exit" to="." method="_on_exit_pressed"]

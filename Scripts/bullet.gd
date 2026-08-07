@@ -1,6 +1,8 @@
 extends Area2D
 
-var travelled_distance = 0 
+var travelled_distance = 0
+var main_game: Node2D
+
 
 func _physics_process(delta):
 	const SPEED = 100
@@ -14,7 +16,9 @@ func _physics_process(delta):
 
 
 func _on_body_entered(body: Node2D) -> void:
-	queue_free()
 	if body.has_method("take_damage") and not body.name == "Player":
-		body.take_damage()
+		if body.take_damage():
+			Global.score_points += 1
+			print("A", Global.score_points)
+	queue_free()
 	

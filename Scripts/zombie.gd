@@ -34,14 +34,17 @@ func makepath() -> void:
 func _on_timer_timeout() -> void:
 	makepath()
 	
-func take_damage():
+func take_damage() -> bool:
 	if not dead:
 		health -= 1
 		if health <= 0:
 			animated_sprite.play("Dead")
 			dead = true
+			print("deAd")
 		else:
 			animated_sprite.play("Hurt")
+	print("A", dead)
+	return dead
 
 
 func _on_animation_finished() -> void:

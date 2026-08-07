@@ -10,6 +10,8 @@ func _ready():
 	spawn_mob()
 	spawn_mob()
 	$Fade_Transition/AnimationPlayer.play("fate_out")
+
+
 func spawn_mob():
 	var new_zombie = preload("res://Scenes/zombie.tscn").instantiate()
 	%PathFollow2D.progress_ratio = randf()

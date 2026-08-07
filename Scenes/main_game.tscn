@@ -668,7 +668,7 @@ texture = ExtResource("4_6j5ir")
 [sub_resource type="TileSet" id="TileSet_6y7pd"]
 sources/0 = SubResource("TileSetAtlasSource_18r40")
 
-[node name="Main Game" type="Node2D" unique_id=746782480 node_paths=PackedStringArray("player")]
+[node name="Main_Game" type="Node2D" unique_id=746782480 node_paths=PackedStringArray("player")]
 script = ExtResource("1_bb2iq")
 player = NodePath("Player")
 

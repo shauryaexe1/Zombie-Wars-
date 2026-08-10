@@ -668,9 +668,10 @@ texture = ExtResource("4_6j5ir")
 [sub_resource type="TileSet" id="TileSet_6y7pd"]
 sources/0 = SubResource("TileSetAtlasSource_18r40")
 
-[node name="Main_Game" type="Node2D" unique_id=746782480 node_paths=PackedStringArray("player")]
+[node name="Main_Game" type="Node2D" unique_id=746782480 node_paths=PackedStringArray("player", "score_label")]
 script = ExtResource("1_bb2iq")
 player = NodePath("Player")
+score_label = NodePath("ScoreUI/Control/Label")
 
 [node name="Player" parent="." unique_id=871630980 instance=ExtResource("1_l756w")]
 position = Vector2(26, 100)
@@ -756,7 +757,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="ScoreUI/Control" unique_id=1475314557]
+[node name="Label" type="Label" parent="ScoreUI/Control" unique_id=1475314557 groups=["score"]]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.039

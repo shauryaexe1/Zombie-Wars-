@@ -1,9 +1,11 @@
 extends Node2D
 
 @export var player : CharacterBody2D
+@export var score_label : Label
 
 
 func _ready():
+	Global.score_label = score_label
 	spawn_mob()
 	spawn_mob()
 	spawn_mob()

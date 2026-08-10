@@ -43,8 +43,9 @@ func take_damage() -> bool:
 			print("deAd")
 		else:
 			animated_sprite.play("Hurt")
-	print("A", dead)
-	return dead
+		return dead
+	else:
+		return false
 
 
 func _on_animation_finished() -> void:

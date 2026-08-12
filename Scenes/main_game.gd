@@ -6,6 +6,7 @@ extends Node2D
 
 func _ready():
 	Global.score_label = score_label
+	Global.score_points = 0
 	spawn_mob()
 	spawn_mob()
 	spawn_mob()

@@ -2,9 +2,15 @@
 
 [ext_resource type="Script" uid="uid://cnm6pgjr1uhp6" path="res://Scenes/game.over.r.gd" id="1_2fu2x"]
 [ext_resource type="Texture2D" uid="uid://1oyfcitu61ir" path="res://Scenes/Gameover.png" id="1_amdd6"]
+[ext_resource type="FontFile" uid="uid://bvn6bprv7ardh" path="res://All design/Cowboys 2.0.otf" id="3_2xt5c"]
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=665774702]
+[sub_resource type="LabelSettings" id="LabelSettings_2br8d"]
+font = ExtResource("3_2xt5c")
+font_size = 27
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=665774702 node_paths=PackedStringArray("score_label")]
 script = ExtResource("1_2fu2x")
+score_label = NodePath("Label")
 
 [node name="Control" type="Control" parent="." unique_id=573962187]
 layout_mode = 3
@@ -42,6 +48,14 @@ offset_bottom = 9.828999
 position = Vector2(577.5, 325)
 scale = Vector2(0.83357567, 0.8333334)
 texture = ExtResource("1_amdd6")
+
+[node name="Label" type="Label" parent="." unique_id=941045443]
+offset_left = 486.0
+offset_top = 250.0
+offset_right = 655.0
+offset_bottom = 285.0
+text = "High Score "
+label_settings = SubResource("LabelSettings_2br8d")
 
 [connection signal="pressed" from="Control/Try Again" to="." method="_click_replay"]
 [connection signal="pressed" from="Control/Try Again/Main Menu" to="." method="_Main_menu"]

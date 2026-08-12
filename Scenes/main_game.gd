@@ -3,10 +3,17 @@ extends Node2D
 @export var player : CharacterBody2D
 @export var score_label : Label
 
+var spawn_interval: float = 2.0
+var last_difficulty_score: int = 0
+
 
 func _ready():
 	Global.score_label = score_label
 	Global.score_points = 0
+	
+	last_difficulty_score = 0
+	spawn_interval = 2.0
+	$Timer.wait_time = spawn_interval
 	spawn_mob()
 	spawn_mob()
 	spawn_mob()
@@ -25,4 +32,10 @@ func spawn_mob():
 
 func _on_timer_timeout() -> void:
 	spawn_mob()
+	
+	if Global.score_points >= last_difficulty_score + 40:
+		last_difficulty_score += 40
+		spawn_interval = max(spawn_interval -0.2, 0.5)
+		$Timer.wait_time = spawn_interval
+		
 	

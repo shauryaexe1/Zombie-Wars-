@@ -6,6 +6,8 @@ func _physics_process(delta):
 	if enemies_in_range.size() > 0:
 		var target_enemy = enemies_in_range.front()
 		look_at(target_enemy.global_position)
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
 
 
 func shoot():

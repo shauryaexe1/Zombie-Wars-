@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://dj33182amb6gv"]
 
+[ext_resource type="Texture2D" uid="uid://bpn24omv8gdus" path="res://Assests/Shotgun FREE/Gemini_Generated_Image_jlzof0jlzof0jlzo.jpeg" id="1_ltp0x"]
+
 [node name="Upgrade_menu" type="Node2D" unique_id=1785644126]
 
 [node name="Label" type="Label" parent="." unique_id=509041512]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="GeminiGeneratedImageJlzof0Jlzof0Jlzo" type="Sprite2D" parent="." unique_id=1898040168]
+position = Vector2(580.3436, 324.74997)
+scale = Vector2(0.82617164, 0.8261718)
+texture = ExtResource("1_ltp0x")

@@ -19,6 +19,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage") and not body.name == "Player":
 		if body.take_damage():
 			Global.score_points += 1
+			Global.add_coins(2)
 			print("A", Global.score_points)
 	queue_free()
 	

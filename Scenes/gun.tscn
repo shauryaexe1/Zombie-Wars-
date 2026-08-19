@@ -46,3 +46,5 @@ position = Vector2(7.142854, 0)
 [node name="Bullet" parent="WeaponPivot/Shotgun/ShootingPoint" unique_id=200049140 instance=ExtResource("3_kw0bs")]
 visible = false
 position = Vector2(7.000001, 1.9999999)
+
+[node name="Timer" type="Timer" parent="." unique_id=461886947]

@@ -234,6 +234,8 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 corner_detail = 4
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x3wgy"]
+
 [node name="Player" type="CharacterBody2D" unique_id=327069013]
 collision_layer = 2
 collision_mask = 3
@@ -280,6 +282,18 @@ offset_bottom = 14.000001
 scale = Vector2(0.18030344, 0.18030344)
 theme_override_styles/background = SubResource("StyleBoxFlat_x3wgy")
 theme_override_styles/fill = SubResource("StyleBoxFlat_3smsa")
+value = 100.0
+show_percentage = false
+
+[node name="ShieldBar" type="ProgressBar" parent="." unique_id=1219421561]
+unique_name_in_owner = true
+offset_left = -8.0
+offset_top = -19.0
+offset_right = 7.0
+offset_bottom = -14.0
+theme_override_colors/font_color = Color(0.2, 0.6, 0.9254902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_styles/fill = SubResource("StyleBoxTexture_x3wgy")
 value = 100.0
 show_percentage = false
 

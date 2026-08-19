@@ -1,14 +1,71 @@
 [gd_scene format=3 uid="uid://dj33182amb6gv"]
 
+[ext_resource type="Script" uid="uid://cabaek31c7w06" path="res://Scripts/upgrade_menu.gd" id="1_11363"]
 [ext_resource type="Texture2D" uid="uid://bpn24omv8gdus" path="res://Assests/Shotgun FREE/Gemini_Generated_Image_jlzof0jlzof0jlzo.jpeg" id="1_ltp0x"]
+[ext_resource type="Texture2D" uid="uid://cjgn0dkxdf6tc" path="res://buttons/Not clicked.png" id="2_2hr16"]
+[ext_resource type="Texture2D" uid="uid://cfb0fi7n5xgcw" path="res://buttons/clicked.png" id="3_lpopj"]
+[ext_resource type="Texture2D" uid="uid://b7mpdkiusyk45" path="res://buttons/clicked main.png" id="4_mpwqm"]
+[ext_resource type="Texture2D" uid="uid://riwxqu2uuwoy" path="res://buttons/hover main.png" id="5_v4egn"]
 
 [node name="Upgrade_menu" type="Node2D" unique_id=1785644126]
+script = ExtResource("1_11363")
 
-[node name="Label" type="Label" parent="." unique_id=509041512]
+[node name="Button_manager" type="Control" parent="." unique_id=1463790312]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 3.0517578e-05
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 40.00003
+
+[node name="FIRE_RATE" type="TextureButton" parent="Button_manager" unique_id=662392994]
+z_index = 1
+layout_mode = 0
+offset_left = 782.0
+offset_top = 147.99997
+offset_right = 1112.0
+offset_bottom = 329.99997
+scale = Vector2(0.56661737, 0.5730622)
+texture_normal = ExtResource("2_2hr16")
+texture_pressed = ExtResource("3_lpopj")
+
+[node name="SHIELD" type="TextureButton" parent="Button_manager" unique_id=1761956189]
+z_index = 1
+layout_mode = 0
+offset_left = 777.0
+offset_top = 283.99997
+offset_right = 1107.0
+offset_bottom = 465.99997
+scale = Vector2(0.5571588, 0.57299453)
+texture_normal = ExtResource("2_2hr16")
+texture_pressed = ExtResource("3_lpopj")
+
+[node name="INCREASED_HEALTH" type="TextureButton" parent="Button_manager" unique_id=1888999823]
+z_index = 1
+layout_mode = 0
+offset_left = 775.0
+offset_top = 422.99997
+offset_right = 1105.0
+offset_bottom = 605.0
+scale = Vector2(0.56030446, 0.5759444)
+texture_normal = ExtResource("2_2hr16")
+texture_pressed = ExtResource("3_lpopj")
+
+[node name="MAIN_MENU" type="TextureButton" parent="Button_manager" unique_id=935999845]
+layout_mode = 0
+offset_left = 428.0
+offset_top = 553.0
+offset_right = 1096.0
+offset_bottom = 735.0
+scale = Vector2(0.4096066, 0.2900608)
+texture_pressed = ExtResource("4_mpwqm")
+texture_hover = ExtResource("5_v4egn")
 
 [node name="GeminiGeneratedImageJlzof0Jlzof0Jlzo" type="Sprite2D" parent="." unique_id=1898040168]
-position = Vector2(580.3436, 324.74997)
+position = Vector2(572, 329)
 scale = Vector2(0.82617164, 0.8261718)
 texture = ExtResource("1_ltp0x")
+
+[connection signal="pressed" from="Button_manager/FIRE_RATE" to="." method="_on_fire_rate_pressed"]
+[connection signal="pressed" from="Button_manager/SHIELD" to="." method="_on_shield_pressed"]
+[connection signal="pressed" from="Button_manager/INCREASED_HEALTH" to="." method="_on_increased_health_pressed"]
+[connection signal="pressed" from="Button_manager/MAIN_MENU" to="." method="_on_main_menu_pressed"]

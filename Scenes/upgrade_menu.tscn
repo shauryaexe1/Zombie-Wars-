@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dj33182amb6gv"]
+
+[node name="Upgrade_menu" type="Node2D" unique_id=1785644126]
+
+[node name="Label" type="Label" parent="." unique_id=509041512]
+offset_right = 40.0
+offset_bottom = 23.0

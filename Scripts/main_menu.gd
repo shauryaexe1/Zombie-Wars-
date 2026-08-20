@@ -27,5 +27,6 @@ func _on_exit_pressed() -> void:
 func _on_fade_timer_timeout() -> void:
 	if button_type == "start_game":
 		get_tree().change_scene_to_file("res://Scenes/main_game.tscn")
-		
+	elif button_type == "upgrade_menu":
+		get_tree().change_scene_to_file("res://Scenes/upgrade_menu.tscn")
 	

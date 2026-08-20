@@ -46,8 +46,6 @@ func buy_upgrade(upgrade_name: String) -> bool:
 		"shield":
 			if has_shield_upgrade: return false
 			cost = SHIELD_UPGRADE_COST
-			
-	return false
 	
 	if not can_afford(cost):
 		return false

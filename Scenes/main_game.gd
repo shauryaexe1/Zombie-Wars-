@@ -2,6 +2,7 @@ extends Node2D
 
 @export var player : CharacterBody2D
 @export var score_label : Label
+@export var coins_label : Label
 
 var spawn_interval: float = 2.0
 var last_difficulty_score: int = 0
@@ -9,7 +10,9 @@ var last_difficulty_score: int = 0
 
 func _ready():
 	Global.score_label = score_label
+	Global.coins_label = coins_label
 	Global.score_points = 0
+	Global.run_coins = 0
 	
 	last_difficulty_score = 0
 	spawn_interval = 2.0

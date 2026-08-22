@@ -12,8 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://cd5ylwniuwore" path="res://Button Srt/Gamestart.png" id="10_4nkqq"]
 [ext_resource type="PackedScene" uid="uid://cfv8fsmect71w" path="res://Scenes/fade_transition.tscn" id="11_ehtkc"]
 
-[node name="Main Menu" type="Node2D" unique_id=2051416741]
+[node name="Main Menu" type="Node2D" unique_id=2051416741 node_paths=PackedStringArray("coins_label")]
 script = ExtResource("1_vr1f0")
+coins_label = NodePath("Coins")
 
 [node name="Button_Manager" type="Control" parent="." unique_id=827543213]
 layout_mode = 3
@@ -63,6 +64,13 @@ texture = ExtResource("10_4nkqq")
 visible = false
 
 [node name="Fade_timer" type="Timer" parent="Fade_Transition" unique_id=75951796]
+
+[node name="Coins" type="Label" parent="." unique_id=1989338995]
+offset_left = 134.0
+offset_top = 222.0
+offset_right = 174.0
+offset_bottom = 245.0
+scale = Vector2(2.2221422, 2.2221422)
 
 [connection signal="pressed" from="Button_Manager/Game Start" to="." method="_on_game_start_pressed"]
 [connection signal="pressed" from="Button_Manager/Upgrade Menu" to="." method="_on_upgrade_menu_pressed"]

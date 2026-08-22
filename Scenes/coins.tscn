@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dna3rxf2cwvxl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nvoti"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Coins" type="AnimatedSprite2D" unique_id=894500198]
+sprite_frames = SubResource("SpriteFrames_nvoti")
+animation = &"new_animation"

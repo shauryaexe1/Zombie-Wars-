@@ -23,13 +23,6 @@ func _physics_process(_delta: float) -> void:
 func makepath() -> void:
 	nav_agent.target_position = player.global_position
 	nav_agent.avoidance_enabled= true
-	
-
-
-
-
-
-
 
 func _on_timer_timeout() -> void:
 	makepath()

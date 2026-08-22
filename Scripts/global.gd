@@ -12,13 +12,20 @@ var score_points: int = 0:
 		_on_score_changed()
 		
 var high_score: int = 0
-var coins : int = 0
+
+var coins : int = 0:
+	set(value):
+		coins = value
+		_on_coins_changed()
+		
+var run_coins: int = 0
 
 var has_health_upgrade: bool = false
 var has_firerate_upgrade: bool = false
 var has_shield_upgrade: bool = false
 
 var score_label: Label
+var coins_label: Label
 
 func _ready() -> void:
 	load_game()
@@ -28,11 +35,18 @@ func _on_score_changed() -> void:
 	if high_score < score_points:
 		high_score = score_points
 		
+func _on_coins_changed()  -> void:
+	if coins_label:
+		coins_label.text = "Coins" + str(coins)
+
+
 func add_coins(amount:int) -> void:
 	coins += amount
+	run_coins += amount
 	
 func can_afford (cost:int) -> bool:
 	return coins >= cost
+	
 	
 func buy_upgrade(upgrade_name: String) -> bool:
 	var cost := 0

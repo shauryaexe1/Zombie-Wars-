@@ -7,9 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://b7mpdkiusyk45" path="res://buttons/clicked main.png" id="4_mpwqm"]
 [ext_resource type="Texture2D" uid="uid://riwxqu2uuwoy" path="res://buttons/hover main.png" id="5_v4egn"]
 
-[node name="Upgrade_menu" type="Node2D" unique_id=1785644126 node_paths=PackedStringArray("coins_label")]
+[node name="Upgrade_menu" type="Node2D" unique_id=1785644126 node_paths=PackedStringArray("coins_label", "INCREASED_HEALTH", "increased_health_label", "FIRE_RATE", "fire_rate_label", "SHIELD", "shield_label")]
 script = ExtResource("1_11363")
 coins_label = NodePath("Coins_label")
+INCREASED_HEALTH = NodePath("Button_manager/INCREASED_HEALTH")
+increased_health_label = NodePath("Button_manager/INCREASED_HEALTH/increased_health_label")
+FIRE_RATE = NodePath("Button_manager/FIRE_RATE")
+fire_rate_label = NodePath("Button_manager/FIRE_RATE/fire_rate_label")
+SHIELD = NodePath("Button_manager/SHIELD")
+shield_label = NodePath("Button_manager/SHIELD/shield_label")
 
 [node name="Button_manager" type="Control" parent="." unique_id=1463790312]
 layout_mode = 3
@@ -92,7 +98,7 @@ offset_left = 879.0
 offset_top = 78.0
 offset_right = 919.0
 offset_bottom = 101.0
-scale = Vector2(4.236797, 1.6250035)
+scale = Vector2(2.3860033, 1.4673338)
 
 [connection signal="pressed" from="Button_manager/FIRE_RATE" to="." method="_on_fire_rate_pressed"]
 [connection signal="pressed" from="Button_manager/SHIELD" to="." method="_on_shield_pressed"]

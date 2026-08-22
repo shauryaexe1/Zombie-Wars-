@@ -1,6 +1,11 @@
 extends Node2D
 
+@export var coins_label: Label
+
 var button_type = null
+
+func _ready() -> void:
+	coins_label.text = "Coins" + str(Global.coins)
 
 func _on_game_start_pressed() -> void:
 	button_type = "start_game"

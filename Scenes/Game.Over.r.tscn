@@ -8,9 +8,10 @@
 font = ExtResource("3_2xt5c")
 font_size = 27
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=665774702 node_paths=PackedStringArray("score_label")]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=665774702 node_paths=PackedStringArray("score_label", "coins_label")]
 script = ExtResource("1_2fu2x")
 score_label = NodePath("Label")
+coins_label = NodePath("coins label")
 
 [node name="Control" type="Control" parent="." unique_id=573962187]
 layout_mode = 3
@@ -56,6 +57,10 @@ offset_right = 655.0
 offset_bottom = 285.0
 text = "High Score "
 label_settings = SubResource("LabelSettings_2br8d")
+
+[node name="coins label" type="Label" parent="." unique_id=1976077875]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="pressed" from="Control/Try Again" to="." method="_click_replay"]
 [connection signal="pressed" from="Control/Try Again/Main Menu" to="." method="_Main_menu"]

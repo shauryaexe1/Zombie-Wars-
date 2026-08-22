@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpetror8dce71"
-path="res://.godot/imported/Cactus_Sprite_Sheet.png-31efd7042229c608854e5e3308e0c011.ctex"
+uid="uid://bc1pkm4y42f48"
+path="res://.godot/imported/coins-chests-etc-2-0.png-b0163a35b8cc8fb80d0e19c30886398f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assests/Cactus_Sprite_Sheet.png"
-dest_files=["res://.godot/imported/Cactus_Sprite_Sheet.png-31efd7042229c608854e5e3308e0c011.ctex"]
+source_file="res://coins/coins-chests-etc-2-0.png"
+dest_files=["res://.godot/imported/coins-chests-etc-2-0.png-b0163a35b8cc8fb80d0e19c30886398f.ctex"]
 
 [params]
 

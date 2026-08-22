@@ -1,18 +1,59 @@
 [gd_scene format=3 uid="uid://dna3rxf2cwvxl"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_nvoti"]
+[ext_resource type="Texture2D" uid="uid://bc1pkm4y42f48" path="res://coins/coins-chests-etc-2-0.png" id="1_dobl1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ojwyu"]
+atlas = ExtResource("1_dobl1")
+region = Rect2(64, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2shm"]
+atlas = ExtResource("1_dobl1")
+region = Rect2(80, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nolx5"]
+atlas = ExtResource("1_dobl1")
+region = Rect2(96, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_voadd"]
+atlas = ExtResource("1_dobl1")
+region = Rect2(112, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgac7"]
+atlas = ExtResource("1_dobl1")
+region = Rect2(128, 17, 16, 17)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4i61g"]
+atlas = ExtResource("1_dobl1")
+region = Rect2(144, 17, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sgoy0"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"default",
-"speed": 5.0
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ojwyu")
 }, {
-"frames": [],
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2shm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nolx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_voadd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgac7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4i61g")
+}],
 "loop": true,
-"name": &"new_animation",
-"speed": 5.0
+"name": &"spin",
+"speed": 10.0
 }]
 
-[node name="Coins" type="AnimatedSprite2D" unique_id=894500198]
-sprite_frames = SubResource("SpriteFrames_nvoti")
-animation = &"new_animation"
+[node name="Coin" type="AnimatedSprite2D" unique_id=1409273429]
+sprite_frames = SubResource("SpriteFrames_sgoy0")
+animation = &"spin"
+autoplay = "spin"
+frame_progress = 0.80114037

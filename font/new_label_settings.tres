@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://b5atkdx3rt028"]
+
+[ext_resource type="FontFile" uid="uid://cgx83prcugr15" path="res://font/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="1_erqoo"]
+
+[resource]
+font = ExtResource("1_erqoo")
+font_size = 12

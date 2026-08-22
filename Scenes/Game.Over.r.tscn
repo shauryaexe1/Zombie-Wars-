@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cnm6pgjr1uhp6" path="res://Scenes/game.over.r.gd" id="1_2fu2x"]
 [ext_resource type="Texture2D" uid="uid://1oyfcitu61ir" path="res://Scenes/Gameover.png" id="1_amdd6"]
 [ext_resource type="FontFile" uid="uid://bvn6bprv7ardh" path="res://All design/Cowboys 2.0.otf" id="3_2xt5c"]
+[ext_resource type="LabelSettings" uid="uid://b5atkdx3rt028" path="res://font/new_label_settings.tres" id="4_2br8d"]
+[ext_resource type="PackedScene" uid="uid://dna3rxf2cwvxl" path="res://Scenes/coins.tscn" id="5_o1gbj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2br8d"]
 font = ExtResource("3_2xt5c")
@@ -59,8 +61,15 @@ text = "High Score "
 label_settings = SubResource("LabelSettings_2br8d")
 
 [node name="coins label" type="Label" parent="." unique_id=1976077875]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 199.0
+offset_top = 242.0
+offset_right = 239.0
+offset_bottom = 265.0
+label_settings = ExtResource("4_2br8d")
+
+[node name="Coin" parent="coins label" unique_id=1409273429 instance=ExtResource("5_o1gbj")]
+position = Vector2(92, 13.999996)
+scale = Vector2(2.018316, 2.018316)
 
 [connection signal="pressed" from="Control/Try Again" to="." method="_click_replay"]
 [connection signal="pressed" from="Control/Try Again/Main Menu" to="." method="_Main_menu"]

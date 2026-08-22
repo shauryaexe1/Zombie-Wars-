@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://dxjdx5e05wggk" path="res://Button Srt/Screenshot 2026-08-04 at 11.19.26 PM.png" id="9_mkpwh"]
 [ext_resource type="Texture2D" uid="uid://cd5ylwniuwore" path="res://Button Srt/Gamestart.png" id="10_4nkqq"]
 [ext_resource type="PackedScene" uid="uid://cfv8fsmect71w" path="res://Scenes/fade_transition.tscn" id="11_ehtkc"]
+[ext_resource type="PackedScene" uid="uid://dna3rxf2cwvxl" path="res://Scenes/coins.tscn" id="12_t1dhk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t1dhk"]
 
 [node name="Main Menu" type="Node2D" unique_id=2051416741 node_paths=PackedStringArray("coins_label")]
 script = ExtResource("1_vr1f0")
@@ -66,11 +69,16 @@ visible = false
 [node name="Fade_timer" type="Timer" parent="Fade_Transition" unique_id=75951796]
 
 [node name="Coins" type="Label" parent="." unique_id=1989338995]
-offset_left = 134.0
-offset_top = 222.0
-offset_right = 174.0
-offset_bottom = 245.0
+offset_left = 86.0
+offset_top = 219.0
+offset_right = 126.0
+offset_bottom = 242.0
 scale = Vector2(2.2221422, 2.2221422)
+label_settings = SubResource("LabelSettings_t1dhk")
+
+[node name="Coin" parent="." unique_id=1409273429 instance=ExtResource("12_t1dhk")]
+position = Vector2(291, 247.00002)
+scale = Vector2(2.229635, 2.229635)
 
 [connection signal="pressed" from="Button_Manager/Game Start" to="." method="_on_game_start_pressed"]
 [connection signal="pressed" from="Button_Manager/Upgrade Menu" to="." method="_on_upgrade_menu_pressed"]

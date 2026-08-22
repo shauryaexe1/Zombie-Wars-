@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cfb0fi7n5xgcw" path="res://buttons/clicked.png" id="3_lpopj"]
 [ext_resource type="Texture2D" uid="uid://b7mpdkiusyk45" path="res://buttons/clicked main.png" id="4_mpwqm"]
 [ext_resource type="Texture2D" uid="uid://riwxqu2uuwoy" path="res://buttons/hover main.png" id="5_v4egn"]
+[ext_resource type="PackedScene" uid="uid://dna3rxf2cwvxl" path="res://Scenes/coins.tscn" id="7_lpopj"]
+[ext_resource type="LabelSettings" uid="uid://b5atkdx3rt028" path="res://font/new_label_settings.tres" id="7_mpwqm"]
 
 [node name="Upgrade_menu" type="Node2D" unique_id=1785644126 node_paths=PackedStringArray("coins_label", "INCREASED_HEALTH", "increased_health_label", "FIRE_RATE", "fire_rate_label", "SHIELD", "shield_label")]
 script = ExtResource("1_11363")
@@ -99,6 +101,11 @@ offset_top = 78.0
 offset_right = 919.0
 offset_bottom = 101.0
 scale = Vector2(2.3860033, 1.4673338)
+label_settings = ExtResource("7_mpwqm")
+
+[node name="Coin" parent="." unique_id=1409273429 instance=ExtResource("7_lpopj")]
+position = Vector2(1027, 89.000015)
+scale = Vector2(1.5025487, 1.5452545)
 
 [connection signal="pressed" from="Button_manager/FIRE_RATE" to="." method="_on_fire_rate_pressed"]
 [connection signal="pressed" from="Button_manager/SHIELD" to="." method="_on_shield_pressed"]

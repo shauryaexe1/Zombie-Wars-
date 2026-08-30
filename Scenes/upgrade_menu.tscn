@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dj33182amb6gv"]
 
 [ext_resource type="Script" uid="uid://cabaek31c7w06" path="res://Scripts/upgrade_menu.gd" id="1_11363"]
-[ext_resource type="Texture2D" uid="uid://bpn24omv8gdus" path="res://Assests/Shotgun FREE/Gemini_Generated_Image_jlzof0jlzof0jlzo.jpeg" id="1_ltp0x"]
 [ext_resource type="Texture2D" uid="uid://cjgn0dkxdf6tc" path="res://buttons/Not clicked.png" id="2_2hr16"]
 [ext_resource type="Texture2D" uid="uid://cfb0fi7n5xgcw" path="res://buttons/clicked.png" id="3_lpopj"]
 [ext_resource type="Texture2D" uid="uid://b7mpdkiusyk45" path="res://buttons/clicked main.png" id="4_mpwqm"]
 [ext_resource type="Texture2D" uid="uid://riwxqu2uuwoy" path="res://buttons/hover main.png" id="5_v4egn"]
 [ext_resource type="PackedScene" uid="uid://dna3rxf2cwvxl" path="res://Scenes/coins.tscn" id="7_lpopj"]
 [ext_resource type="LabelSettings" uid="uid://b5atkdx3rt028" path="res://font/new_label_settings.tres" id="7_mpwqm"]
+[ext_resource type="Texture2D" uid="uid://cudorbh4ueyc4" path="res://All design/upgrade_menu_final.jpg" id="8_mpwqm"]
 
 [node name="Upgrade_menu" type="Node2D" unique_id=1785644126 node_paths=PackedStringArray("coins_label", "INCREASED_HEALTH", "increased_health_label", "FIRE_RATE", "fire_rate_label", "SHIELD", "shield_label")]
 script = ExtResource("1_11363")
@@ -25,6 +25,7 @@ anchors_preset = 0
 offset_top = 3.0517578e-05
 offset_right = 40.0
 offset_bottom = 40.00003
+mouse_filter = 2
 
 [node name="FIRE_RATE" type="TextureButton" parent="Button_manager" unique_id=662392994]
 z_index = 1
@@ -43,6 +44,7 @@ offset_left = -642.4088
 offset_top = 137.8559
 offset_right = -437.68512
 offset_bottom = 183.22617
+label_settings = ExtResource("7_mpwqm")
 
 [node name="SHIELD" type="TextureButton" parent="Button_manager" unique_id=1761956189]
 z_index = 1
@@ -61,6 +63,7 @@ offset_left = -653.3146
 offset_top = 137.87216
 offset_right = -427.1673
 offset_bottom = 186.73825
+label_settings = ExtResource("7_mpwqm")
 
 [node name="INCREASED_HEALTH" type="TextureButton" parent="Button_manager" unique_id=1888999823]
 z_index = 1
@@ -79,6 +82,7 @@ offset_left = -640.7231
 offset_top = 130.2209
 offset_right = -437.26233
 offset_bottom = 182.30928
+label_settings = ExtResource("7_mpwqm")
 
 [node name="MAIN_MENU" type="TextureButton" parent="Button_manager" unique_id=935999845]
 layout_mode = 0
@@ -90,22 +94,24 @@ scale = Vector2(0.4096066, 0.2900608)
 texture_pressed = ExtResource("4_mpwqm")
 texture_hover = ExtResource("5_v4egn")
 
-[node name="GeminiGeneratedImageJlzof0Jlzof0Jlzo" type="Sprite2D" parent="." unique_id=1898040168]
-position = Vector2(572, 329)
-scale = Vector2(0.82617164, 0.8261718)
-texture = ExtResource("1_ltp0x")
-
 [node name="Coins_label" type="Label" parent="." unique_id=1716841834]
+z_index = 2
 offset_left = 879.0
-offset_top = 78.0
-offset_right = 919.0
-offset_bottom = 101.0
+offset_top = 64.0
+offset_right = 931.7215
+offset_bottom = 103.541115
 scale = Vector2(2.3860033, 1.4673338)
 label_settings = ExtResource("7_mpwqm")
 
 [node name="Coin" parent="." unique_id=1409273429 instance=ExtResource("7_lpopj")]
-position = Vector2(1027, 89.000015)
+z_index = 2
+position = Vector2(861.00006, 87)
 scale = Vector2(1.5025487, 1.5452545)
+
+[node name="UpgradeMenuFinal" type="Sprite2D" parent="." unique_id=394755350]
+position = Vector2(575, 415)
+scale = Vector2(0.5755, 0.5827501)
+texture = ExtResource("8_mpwqm")
 
 [connection signal="pressed" from="Button_manager/FIRE_RATE" to="." method="_on_fire_rate_pressed"]
 [connection signal="pressed" from="Button_manager/SHIELD" to="." method="_on_shield_pressed"]

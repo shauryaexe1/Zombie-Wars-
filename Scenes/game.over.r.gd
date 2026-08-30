@@ -3,7 +3,7 @@ extends CanvasLayer
 @export var coins_label: Label
 func _ready():
 	score_label.text = "High Score " + str(Global.high_score)
-	score_label.text = "Coins Earned" + str(Global.run_coins)
+	coins_label.text = "Coins Earned" + str(Global.run_coins)
 	Global.save_game()
 
 func _click_replay() -> void:

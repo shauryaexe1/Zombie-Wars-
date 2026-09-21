@@ -1,11 +1,14 @@
 extends Node2D
 
 @export var coins_label: Label
+@export var high_score_label : Label
 
 var button_type = null
 
 func _ready() -> void:
 	coins_label.text = "Coins - " + str(Global.coins)
+	high_score_label.text = "High Score - " + str(Global.high_score)
+
 
 func _on_game_start_pressed() -> void:
 	button_type = "start_game"
@@ -23,6 +26,7 @@ func _on_upgrade_menu_pressed() -> void:
 	$Fade_Transition/Fade_timer.start()
 	$Fade_Transition/AnimationPlayer.play("fade_in")
 	$"Button_Manager/Upgrade Menu".hide()
+
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()

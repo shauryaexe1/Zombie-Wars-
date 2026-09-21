@@ -11,15 +11,18 @@ extends Node2D
 @export var SHIELD: TextureButton
 @export var shield_label: Label
 
+
 func _ready() -> void:
 	_refresh()
-	
+
+
 func _refresh() -> void:
 	coins_label.text = "Coins: " + str(Global.coins)
 	_setup_button(INCREASED_HEALTH, increased_health_label, Global.has_health_upgrade, Global.HEALTH_UPGRADE_COST, "Health Boost")
 	_setup_button(FIRE_RATE, fire_rate_label, Global.has_firerate_upgrade, Global.FIRERATE_UPGRADE_COST, "Fire Rate Boost")
 	_setup_button(SHIELD, shield_label, Global.has_shield_upgrade, Global.SHIELD_UPGRADE_COST, "Shield")
-	
+
+
 func _setup_button(button: TextureButton, label_node: Label, owned: bool, cost: int, label_text: String) -> void:
 		if owned:
 			label_node.text = label_text + "(Owned)"
@@ -27,7 +30,7 @@ func _setup_button(button: TextureButton, label_node: Label, owned: bool, cost: 
 		else:
 			label_node.text = label_text + "-" + str(cost) + "coins"
 			button.disabled = not Global.can_afford(cost)
-	
+
 
 
 func _on_fire_rate_pressed() -> void:

@@ -8,6 +8,7 @@ var dead: bool = false
 @onready var animated_sprite = $AnimatedSprite2D
 
 
+# Moving to next navigation point at each frame using pathfinding
 func _physics_process(_delta: float) -> void:
 	if not dead:
 		var dir = to_local(nav_agent.get_next_path_position()).normalized()
@@ -20,20 +21,24 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 
 
+# Updates the navigation target to the player's current position
 func makepath() -> void:
 	nav_agent.target_position = player.global_position
 	nav_agent.avoidance_enabled= true
 
+
 func _on_timer_timeout() -> void:
 	makepath()
-	
+
+
+# Reduces zombies health on hit. If zombies dies it returns to true
 func take_damage() -> bool:
 	if not dead:
 		health -= 1
 		if health <= 0:
 			animated_sprite.play("Dead")
 			dead = true
-			print("deAd")
+			
 		else:
 			animated_sprite.play("Hurt")
 		return dead

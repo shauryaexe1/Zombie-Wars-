@@ -4,6 +4,7 @@ var travelled_distance = 0
 var main_game: Node2D
 
 
+# Moves the bullet forward and removed it if it exceeds the maximum range
 func _physics_process(delta):
 	const SPEED = 100
 	const RANGE = 1200
@@ -15,6 +16,7 @@ func _physics_process(delta):
 		queue_free()
 
 
+# On collision it applies damage to teh zombies only and award's player with increased score + coins on a kill
 func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("take_damage") and not body.name == "Player":
 		if body.take_damage():

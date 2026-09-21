@@ -12,12 +12,14 @@
 [ext_resource type="Texture2D" uid="uid://cd5ylwniuwore" path="res://Button Srt/Gamestart.png" id="10_4nkqq"]
 [ext_resource type="PackedScene" uid="uid://cfv8fsmect71w" path="res://Scenes/fade_transition.tscn" id="11_ehtkc"]
 [ext_resource type="PackedScene" uid="uid://dna3rxf2cwvxl" path="res://Scenes/coins.tscn" id="12_t1dhk"]
+[ext_resource type="FontFile" uid="uid://cgx83prcugr15" path="res://font/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="13_5egv6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_t1dhk"]
 
-[node name="Main Menu" type="Node2D" unique_id=2051416741 node_paths=PackedStringArray("coins_label")]
+[node name="Main Menu" type="Node2D" unique_id=2051416741 node_paths=PackedStringArray("coins_label", "high_score_label")]
 script = ExtResource("1_vr1f0")
 coins_label = NodePath("Coins")
+high_score_label = NodePath("HighScore")
 
 [node name="Button_Manager" type="Control" parent="." unique_id=827543213]
 layout_mode = 3
@@ -74,11 +76,21 @@ offset_top = 219.0
 offset_right = 126.0
 offset_bottom = 242.0
 scale = Vector2(2.2221422, 2.2221422)
+theme_override_fonts/font = ExtResource("13_5egv6")
 label_settings = SubResource("LabelSettings_t1dhk")
 
 [node name="Coin" parent="." unique_id=1409273429 instance=ExtResource("12_t1dhk")]
 position = Vector2(291, 247.00002)
 scale = Vector2(2.229635, 2.229635)
+
+[node name="HighScore" type="Label" parent="." unique_id=1450180391]
+visible = false
+offset_left = 890.0
+offset_top = 222.0
+offset_right = 1055.0
+offset_bottom = 281.0
+theme_override_fonts/font = ExtResource("13_5egv6")
+theme_override_font_sizes/font_size = 30
 
 [connection signal="pressed" from="Button_Manager/Game Start" to="." method="_on_game_start_pressed"]
 [connection signal="pressed" from="Button_Manager/Upgrade Menu" to="." method="_on_upgrade_menu_pressed"]

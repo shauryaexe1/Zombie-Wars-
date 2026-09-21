@@ -17,6 +17,8 @@ var character_direction : Vector2
 var dead: bool = false
 @onready var animated_sprite = %AnimatedSprite2D
 
+
+# Applies the health and shield upgrade bonuses (shield only if bought) before the game begins
 func _ready() -> void:
 	if Global.has_health_upgrade:
 		max_health = BASE_MAX_HEALTH + HEALTH_UPGRADE_BONUS
@@ -32,6 +34,7 @@ func _ready() -> void:
 	%ShieldBar.visible = max_shield > 0
 
 
+# Handles the movement input for player, the player's flippping and the animation state of each frame
 func _physics_process (delta):
 	character_direction.x = Input.get_axis("ui_left", "ui_right")
 	character_direction.y = Input.get_axis("ui_up", "ui_down")
@@ -59,6 +62,7 @@ func _physics_process (delta):
 		take_damage(delta, DAMAGE_RATE, overlapping_mobs.size())
 
 
+# Absorbs damage through shield first (if shield bought) then health if shield is depleted. 
 func take_damage(delta: float, damage: float, mob_count: int) -> void:
 	print("wowimdead")
 	if dead:

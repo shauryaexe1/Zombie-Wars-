@@ -13,6 +13,7 @@ func _ready():
 	Global.coins_label = coins_label
 	Global.score_points = 0
 	Global.run_coins = 0
+	Global.consume_upgrades()
 	
 	last_difficulty_score = 0
 	spawn_interval = 2.0
@@ -25,6 +26,7 @@ func _ready():
 	$Fade_Transition/AnimationPlayer.play("fate_out")
 
 
+# Spawn's a zombie at a random point along the parimeter path
 func spawn_mob():
 	var new_zombie = preload("res://Scenes/zombie.tscn").instantiate()
 	%PathFollow2D.progress_ratio = randf()
@@ -33,9 +35,11 @@ func spawn_mob():
 	add_child(new_zombie)
 
 
+# Increases the difficulty of the game by reducing spawn interval of zombies at every 40-point milestone 
 func _on_timer_timeout() -> void:
 	spawn_mob()
-	
+
+
 	if Global.score_points >= last_difficulty_score + 40:
 		last_difficulty_score += 40
 		spawn_interval = max(spawn_interval -0.2, 0.5)

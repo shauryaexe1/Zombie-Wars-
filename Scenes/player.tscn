@@ -216,7 +216,7 @@ animations = [{
 size = Vector2(8, 3.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x3wgy"]
-size = Vector2(7, 16)
+size = Vector2(8, 13)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x3wgy"]
 bg_color = Color(0.60120577, 0, 0.04849705, 1)
@@ -249,21 +249,21 @@ script = ExtResource("1_cvnsp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1925404493]
 unique_name_in_owner = true
 z_index = 2
-position = Vector2(0, -4)
+position = Vector2(1.249999, -5.75)
 scale = Vector2(0.22265624, 0.20703125)
 sprite_frames = SubResource("SpriteFrames_8erm5")
-animation = &"Dead"
+animation = &"Run"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2044032194]
-position = Vector2(-2, 7.75)
+position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_f1ek2")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1318759121]
 zoom = Vector2(6, 6)
 
 [node name="Gun" parent="." unique_id=1484658533 instance=ExtResource("6_x3wgy")]
-position = Vector2(2, 2)
+position = Vector2(3.249999, 0.25)
 collision_mask = 8
 
 [node name="DamageArea" type="Area2D" parent="." unique_id=1369483751]
@@ -272,7 +272,6 @@ collision_layer = 10
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=886347479]
-position = Vector2(-1, 1)
 shape = SubResource("RectangleShape2D_x3wgy")
 debug_color = Color(0.99907476, 0, 0.1373277, 0.41960785)
 

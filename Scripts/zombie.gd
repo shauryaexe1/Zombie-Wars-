@@ -1,6 +1,6 @@
 extends CharacterBody2D
 const speed = 40
-const attack_range = 20.0
+const attack_range = 5.0
 var health = 2
 var dead: bool = false
 

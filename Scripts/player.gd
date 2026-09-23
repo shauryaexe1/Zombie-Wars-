@@ -45,14 +45,17 @@ func _physics_process (delta):
 	elif character_direction.x < 0:
 		animated_sprite.flip_h = true
 	
-	if character_direction:
-		velocity = character_direction * movement_speed
-		if animated_sprite.animation != "Run":
-			animated_sprite.animation = "Run"
-	else:
-		if not animated_sprite.animation == "Hurt" and not animated_sprite.animation == "Dead":
-			animated_sprite.animation = "Idle"
+	if not dead:
+		if character_direction:
+			velocity = character_direction * movement_speed
+			if animated_sprite.animation != "Run":
+				animated_sprite.animation = "Run"
+		else:
+			if not animated_sprite.animation == "Hurt":
+				animated_sprite.animation = "Idle"
 			velocity = velocity.move_toward(Vector2.ZERO,movement_speed)
+	else:
+		velocity = velocity.move_toward(Vector2.ZERO,movement_speed)
 	
 	move_and_slide()
 	
@@ -80,7 +83,7 @@ func take_damage(delta: float, damage: float, mob_count: int) -> void:
 		health -= incoming
 		%ProgressBar.value = health
 
-		if health<= 0.0:
+		if health <= 0.0:
 			health = 0.0
 			animated_sprite.play("Dead")
 			health_depleted.emit()
@@ -88,9 +91,10 @@ func take_damage(delta: float, damage: float, mob_count: int) -> void:
 		else:
 			health -= damage * mob_count * delta
 			%ProgressBar.value = health
-			animated_sprite.play("Hurt")
+			if not animated_sprite.animation == "Run":
+				animated_sprite.play("Hurt")
 
 
 func _on_animation_finish() -> void:
-	if animated_sprite.animation=="Dead":
+	if animated_sprite.animation == "Dead":
 		get_tree().change_scene_to_file("res://Scenes/Game.Over.r.tscn")

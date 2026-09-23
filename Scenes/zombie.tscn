@@ -199,7 +199,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmcj1"]
-size = Vector2(7.5, 2.75)
+size = Vector2(7.5, 8.1875)
 
 [node name="Zombie" type="CharacterBody2D" unique_id=1703867043]
 collision_layer = 10
@@ -208,13 +208,13 @@ motion_mode = 1
 script = ExtResource("1_w2xga")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=780978589]
-position = Vector2(-1.2500012, -13.750001)
+position = Vector2(0, -6.000001)
 scale = Vector2(0.20703124, 0.20703124)
 sprite_frames = SubResource("SpriteFrames_fj6an")
 animation = &"Attack"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=709053964]
-position = Vector2(-2, -1)
+position = Vector2(0, 0.09375)
 shape = SubResource("RectangleShape2D_tmcj1")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=624432139]

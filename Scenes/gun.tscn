@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bnavo4cwp6x27" path="res://Scripts/gun.gd" id="1_dk5gl"]
 [ext_resource type="Texture2D" uid="uid://b0wguf5oox68f" path="res://Assests/Shotgun FREE/shotgun1-Sheet.png" id="1_vk1bi"]
 [ext_resource type="PackedScene" uid="uid://d08oqy6k4rkjv" path="res://Scenes/bullet.tscn" id="3_kw0bs"]
+[ext_resource type="AudioStream" uid="uid://ns0j55m8ltkj" path="res://Audio files/Shooting_sound.mp3" id="4_k4teu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dk5gl"]
 radius = 121.037186
@@ -48,3 +49,6 @@ visible = false
 position = Vector2(7.000001, 1.9999999)
 
 [node name="Timer" type="Timer" parent="." unique_id=461886947]
+
+[node name="ShootingSound" type="AudioStreamPlayer" parent="." unique_id=401367952]
+stream = ExtResource("4_k4teu")

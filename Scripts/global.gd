@@ -29,8 +29,16 @@ var has_shield_upgrade: bool = false
 var score_label: Label
 var coins_label: Label
 
+var music_player: AudioStreamPlayer
+
 func _ready() -> void:
 	load_game()
+	# Set up background music 
+	music_player = AudioStreamPlayer.new()
+	music_player.stream = preload("res://Audio files/mainmenu_music.mp3")
+	music_player.stream.loop = true
+	music_player.autoplay = true 
+	add_child(music_player)
 
 
 func _on_score_changed() -> void:
@@ -108,4 +116,12 @@ func consume_upgrades() -> void:
 	has_firerate_upgrade = false
 	has_shield_upgrade = false
 	save_game()
+	
+func stop_music() -> void:
+	if music_player:
+		music_player.stop()
+		
+func start_music() -> void:
+	if music_player:
+		music_player.play()
 	

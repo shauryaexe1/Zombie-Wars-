@@ -21,6 +21,7 @@ func _physics_process(delta):
 
 
 func shoot():
+	$ShootingSound.play()
 	const BULLET = preload("res://Scenes/bullet.tscn")
 	var new_bullet = BULLET.instantiate()
 	new_bullet.global_position = %ShootingPoint.global_position

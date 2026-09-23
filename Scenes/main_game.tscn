@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cfv8fsmect71w" path="res://Scenes/fade_transition.tscn" id="7_18r40"]
 [ext_resource type="FontFile" uid="uid://bvn6bprv7ardh" path="res://All design/Cowboys 2.0.otf" id="8_6y7pd"]
 [ext_resource type="LabelSettings" uid="uid://b5atkdx3rt028" path="res://font/new_label_settings.tres" id="9_r0mdn"]
+[ext_resource type="AudioStream" uid="uid://dbor7xyy0ca5u" path="res://Audio files/In_gameplay_music.mp3" id="10_r0mdn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0mdn"]
 size = Vector2(203, 114)
@@ -806,5 +807,10 @@ visible = false
 position = Vector2(3.9994583, 15.145325)
 scale = Vector2(1, 0.99999994)
 shape = SubResource("RectangleShape2D_0xqxu")
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="." unique_id=345980618]
+stream = ExtResource("10_r0mdn")
+autoplay = true
+parameters/looping = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

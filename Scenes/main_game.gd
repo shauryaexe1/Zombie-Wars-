@@ -14,6 +14,8 @@ func _ready():
 	Global.score_points = 0
 	Global.run_coins = 0
 	Global.consume_upgrades()
+	Global.stop_music()
+	$GameMusic.play()
 	
 	last_difficulty_score = 0
 	spawn_interval = 2.0

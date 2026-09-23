@@ -6,8 +6,10 @@ extends Node2D
 var button_type = null
 
 func _ready() -> void:
+	Global.start_music()
 	coins_label.text = "Coins - " + str(Global.coins)
 	high_score_label.text = "High Score - " + str(Global.high_score)
+	
 
 
 func _on_game_start_pressed() -> void:

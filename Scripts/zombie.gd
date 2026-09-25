@@ -17,7 +17,6 @@ func _physics_process(_delta: float) -> void:
 		return
 		
 	var distance_to_player = global_position.distance_to(player.global_position)
-	print("Distance:", distance_to_player)
 	var in_attack_range = player_damage_area.overlaps_body(self)
 	
 	if in_attack_range:

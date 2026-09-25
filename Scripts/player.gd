@@ -67,7 +67,6 @@ func _physics_process (delta):
 
 # Absorbs damage through shield first (if shield bought) then health if shield is depleted. 
 func take_damage(delta: float, damage: float, mob_count: int) -> void:
-	print("wowimdead")
 	if dead:
 		return
 	

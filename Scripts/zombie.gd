@@ -1,6 +1,6 @@
 extends CharacterBody2D
 const speed = 40
-const attack_range = 5.0
+const attack_range = 6.0
 var health = 2
 var dead: bool = false
 
@@ -18,7 +18,7 @@ func _physics_process(_delta: float) -> void:
 		
 	var distance_to_player = global_position.distance_to(player.global_position)
 	print("Distance:", distance_to_player)
-	var in_attack_range = distance_to_player <= attack_range
+	var in_attack_range = player_damage_area.overlaps_body(self)
 	
 	if in_attack_range:
 		velocity = Vector2.ZERO

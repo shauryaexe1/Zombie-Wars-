@@ -12,10 +12,12 @@ extends Node2D
 @export var shield_label: Label
 
 
+# Refreshes the upgrade menu display on load 
 func _ready() -> void:
 	_refresh()
 
 
+# Updates coin display and all three upgrade button states after each purchase 
 func _refresh() -> void:
 	coins_label.text = "Coins - " + str(Global.coins)
 	_setup_button(INCREASED_HEALTH, increased_health_label, Global.has_health_upgrade, Global.HEALTH_UPGRADE_COST, "Health Boost")
@@ -23,6 +25,7 @@ func _refresh() -> void:
 	_setup_button(SHIELD, shield_label, Global.has_shield_upgrade, Global.SHIELD_UPGRADE_COST, "Shield")
 
 
+# Sets each button label and disabled state based on ownership and affordability 
 func _setup_button(button: TextureButton, label_node: Label, owned: bool, cost: int, label_text: String) -> void:
 		if owned:
 			label_node.text = label_text + "(Owned)"

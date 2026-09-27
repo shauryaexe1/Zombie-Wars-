@@ -87,11 +87,7 @@ func take_damage(delta: float, damage: float, mob_count: int) -> void:
 			animated_sprite.play("Dead")
 			health_depleted.emit()
 			dead = true
-		else:
-			health -= damage * mob_count * delta
-			%ProgressBar.value = health
-			if not animated_sprite.animation == "Run":
-				animated_sprite.play("Hurt")
+		
 
 
 func _on_animation_finish() -> void:

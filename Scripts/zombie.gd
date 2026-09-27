@@ -61,6 +61,7 @@ func take_damage() -> bool:
 		return false
 
 
+# Plays dead animation and finishes zombies from the scene after animations finish
 func _on_animation_finished() -> void:
 	if animated_sprite.animation == "Hurt":
 		animated_sprite.play("Walk")

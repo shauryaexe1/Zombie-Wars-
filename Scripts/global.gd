@@ -33,6 +33,8 @@ var music_player: AudioStreamPlayer
 
 func _ready() -> void:
 	load_game()
+	
+	
 	# Set up background music 
 	music_player = AudioStreamPlayer.new()
 	music_player.stream = preload("res://Audio files/mainmenu_music.mp3")
@@ -41,6 +43,7 @@ func _ready() -> void:
 	add_child(music_player)
 
 
+# Updates the score label and checks whether the high score needs updating
 func _on_score_changed() -> void:
 	score_label.text = str(score_points)
 	if high_score < score_points:
@@ -52,6 +55,7 @@ func _on_coins_changed()  -> void:
 		coins_label.text = "Coins : " + str(coins)
 
 
+# Adds coins to both the total and the current run count
 func add_coins(amount:int) -> void:
 	coins += amount
 	run_coins += amount

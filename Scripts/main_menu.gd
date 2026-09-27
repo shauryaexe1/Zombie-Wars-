@@ -5,6 +5,8 @@ extends Node2D
 
 var button_type = null
 
+
+# Displays current coin balance and high score then starts the menu music 
 func _ready() -> void:
 	Global.start_music()
 	coins_label.text = "Coins - " + str(Global.coins)
@@ -35,6 +37,7 @@ func _on_exit_pressed() -> void:
 	$Button_Manager/Exit.hide()
 
 
+# Triggers fade transition then routes to the correct scene based on button type 
 func _on_fade_timer_timeout() -> void:
 	if button_type == "start_game":
 		get_tree().change_scene_to_file("res://Scenes/main_game.tscn")

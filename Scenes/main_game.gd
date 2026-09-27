@@ -8,6 +8,7 @@ var spawn_interval: float = 2.0
 var last_difficulty_score: int = 0
 
 
+# Sets up all global refferences, resets the game state and starts the game with 5 zombies 
 func _ready():
 	Global.score_label = score_label
 	Global.coins_label = coins_label
@@ -25,7 +26,7 @@ func _ready():
 	spawn_mob()
 	spawn_mob()
 	spawn_mob()
-	$Fade_Transition/AnimationPlayer.play("fate_out")
+	$Fade_Transition/AnimationPlayer.play("fade_out")
 
 
 # Spawn's a zombie at a random point along the parimeter path

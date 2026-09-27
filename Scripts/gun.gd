@@ -3,6 +3,8 @@ extends Area2D
 const BASE_FIRE_COOLDOWN := 0.3
 const FIRE_RATE_MULTIPLIER:= 0.7
 
+
+# Applies fire rate upgrade if owned then sets the timer as a one shot cooldown gate
 func _ready() -> void:
 	$Timer.wait_time = BASE_FIRE_COOLDOWN
 	if Global.has_firerate_upgrade:
@@ -10,6 +12,7 @@ func _ready() -> void:
 	$Timer.one_shot = true
 
 
+# Auto aims at the nearest zombie in range and fires when spacebar is pressed
 func _physics_process(delta):
 	var enemies_in_range = get_overlapping_bodies()
 	if enemies_in_range.size() > 0:
@@ -20,6 +23,7 @@ func _physics_process(delta):
 		$Timer.start()
 
 
+# Plays shooting sound and instantiates a new bullet at the shooting point
 func shoot():
 	$ShootingSound.play()
 	const BULLET = preload("res://Scenes/bullet.tscn")

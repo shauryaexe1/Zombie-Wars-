@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dna3rxf2cwvxl" path="res://Scenes/coins.tscn" id="7_lpopj"]
 [ext_resource type="LabelSettings" uid="uid://b5atkdx3rt028" path="res://font/new_label_settings.tres" id="7_mpwqm"]
 [ext_resource type="FontFile" uid="uid://cgx83prcugr15" path="res://font/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="7_v4egn"]
-[ext_resource type="Texture2D" uid="uid://j02ptlgn5mjq" path="res://Assests/brackeys_platformer_assets/Screenshot 2026-09-25 at 1.17.31 PM.png" id="9_d1lbs"]
 [ext_resource type="Texture2D" uid="uid://krkfdcnoocbw" path="res://font/Screenshot 2026-09-27 at 2.36.15 PM.png" id="10_d1lbs"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_d1lbs"]
@@ -113,14 +112,9 @@ z_index = 2
 position = Vector2(1079, 84)
 scale = Vector2(1.5025487, 1.5452545)
 
-[node name="UpgradeMenuBackground" type="Sprite2D" parent="." unique_id=1596873878]
-position = Vector2(492, 1628)
-scale = Vector2(0.80235785, 0.817786)
-texture = ExtResource("9_d1lbs")
-
-[node name="Screenshot20260927At2_36_15Pm" type="Sprite2D" parent="." unique_id=8672555]
-position = Vector2(576.5848, 326.83325)
-scale = Vector2(0.6781731, 0.6781731)
+[node name="UpgradeMenu" type="Sprite2D" parent="." unique_id=8672555]
+position = Vector2(575.50006, 326.5)
+scale = Vector2(0.682304, 0.67887026)
 texture = ExtResource("10_d1lbs")
 
 [connection signal="pressed" from="Button_manager/FIRE_RATE" to="." method="_on_fire_rate_pressed"]

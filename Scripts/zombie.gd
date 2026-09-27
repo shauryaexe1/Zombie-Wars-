@@ -1,7 +1,7 @@
 extends CharacterBody2D
 const speed = 40
 const attack_range = 6.0
-var health = 2
+var health = 3
 var dead: bool = false
 
 @export var player: Node2D

@@ -3,9 +3,9 @@ extends Node
 const SAVE_PATH := "user://save.dat"
 
 # Upgrade costs defined as constants to avoid magic number 
-const HEALTH_UPGRADE_COST:= 20
-const FIRERATE_UPGRADE_COST := 50
-const SHIELD_UPGRADE_COST := 100
+const HEALTH_UPGRADE_COST:= 150
+const FIRERATE_UPGRADE_COST := 100
+const SHIELD_UPGRADE_COST := 225
 
 # Score tracking with a reactive number that automatically updates on the HUD label
 var score_points: int = 0:
@@ -49,7 +49,7 @@ func _on_score_changed() -> void:
 
 func _on_coins_changed()  -> void:
 	if coins_label:
-		coins_label.text = "Coins" + str(coins)
+		coins_label.text = "Coins : " + str(coins)
 
 
 func add_coins(amount:int) -> void:

@@ -26,7 +26,6 @@ func _physics_process(_delta: float) -> void:
 			animated_sprite.play ("Attack")
 	else:
 		var dir = to_local(nav_agent.get_next_path_position()).normalized()
-		print(dir)
 		velocity= dir * speed
 		if animated_sprite.animation!= "Walk" and animated_sprite.animation !="Hurt":
 			animated_sprite.play("Walk")

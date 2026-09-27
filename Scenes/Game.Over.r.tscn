@@ -1,19 +1,22 @@
 [gd_scene format=3 uid="uid://clyp3yfmqvf4k"]
 
 [ext_resource type="Script" uid="uid://cnm6pgjr1uhp6" path="res://Scenes/game.over.r.gd" id="1_2fu2x"]
-[ext_resource type="Texture2D" uid="uid://1oyfcitu61ir" path="res://Scenes/Gameover.png" id="1_amdd6"]
-[ext_resource type="FontFile" uid="uid://bvn6bprv7ardh" path="res://All design/Cowboys 2.0.otf" id="3_2xt5c"]
-[ext_resource type="LabelSettings" uid="uid://b5atkdx3rt028" path="res://font/new_label_settings.tres" id="4_2br8d"]
+[ext_resource type="FontFile" uid="uid://cgx83prcugr15" path="res://font/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="2_c6blf"]
 [ext_resource type="PackedScene" uid="uid://dna3rxf2cwvxl" path="res://Scenes/coins.tscn" id="5_o1gbj"]
 [ext_resource type="AudioStream" uid="uid://w8l2rklxe0ow" path="res://Audio files/game_over_music.mp3" id="6_c6blf"]
+[ext_resource type="Texture2D" uid="uid://p6cunbtqrrmy" path="res://Assests/brackeys_platformer_assets/sprites/gameoverbackground.jpeg" id="7_kudvd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2br8d"]
-font = ExtResource("3_2xt5c")
+font = ExtResource("2_c6blf")
 font_size = 27
+
+[sub_resource type="LabelSettings" id="LabelSettings_o1gbj"]
+font = ExtResource("2_c6blf")
+font_size = 15
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=665774702 node_paths=PackedStringArray("score_label", "coins_label")]
 script = ExtResource("1_2fu2x")
-score_label = NodePath("Label")
+score_label = NodePath("HighScore")
 coins_label = NodePath("coins label")
 
 [node name="Control" type="Control" parent="." unique_id=573962187]
@@ -21,6 +24,7 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -48,33 +52,37 @@ offset_top = -11.662001
 offset_right = 8.4999695
 offset_bottom = 9.828999
 
-[node name="GameOver PNG" type="Sprite2D" parent="Control" unique_id=832125064]
-position = Vector2(577.5, 325)
-scale = Vector2(0.83357567, 0.8333334)
-texture = ExtResource("1_amdd6")
-
-[node name="Label" type="Label" parent="." unique_id=941045443]
-offset_left = 486.0
+[node name="HighScore" type="Label" parent="." unique_id=941045443]
+z_index = 2
+offset_left = 504.0
 offset_top = 250.0
-offset_right = 655.0
+offset_right = 673.0
 offset_bottom = 285.0
 text = "High Score "
 label_settings = SubResource("LabelSettings_2br8d")
 
 [node name="coins label" type="Label" parent="." unique_id=1976077875]
-offset_left = 199.0
-offset_top = 242.0
-offset_right = 239.0
-offset_bottom = 265.0
-label_settings = ExtResource("4_2br8d")
+z_index = 2
+offset_left = 482.0
+offset_top = 210.00002
+offset_right = 522.0
+offset_bottom = 240.00002
+scale = Vector2(1.7839779, 1.7839779)
+label_settings = SubResource("LabelSettings_o1gbj")
 
 [node name="Coin" parent="coins label" unique_id=1409273429 instance=ExtResource("5_o1gbj")]
-position = Vector2(92, 13.999996)
-scale = Vector2(2.018316, 2.018316)
+z_index = 2
+position = Vector2(131.72809, 9.52926)
+scale = Vector2(1.0032414, 1.0032414)
 
 [node name="GameOverMusic" type="AudioStreamPlayer" parent="." unique_id=1163915732]
 stream = ExtResource("6_c6blf")
 parameters/looping = true
+
+[node name="Gameoverbackground" type="Sprite2D" parent="." unique_id=1476685934]
+position = Vector2(577.7877, 323)
+scale = Vector2(0.84114575, 0.8411458)
+texture = ExtResource("7_kudvd")
 
 [connection signal="pressed" from="Control/Try Again" to="." method="_click_replay"]
 [connection signal="pressed" from="Control/Try Again/Main Menu" to="." method="_Main_menu"]

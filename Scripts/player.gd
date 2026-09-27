@@ -4,7 +4,7 @@ signal health_depleted
 
 const BASE_MAX_HEALTH := 100.0
 const HEALTH_UPGRADE_BONUS := 50.0
-const BASE_SHIELD := 50.0
+const BASE_SHIELD := 100.0
 
 var max_health: float = BASE_MAX_HEALTH
 var health: float = BASE_MAX_HEALTH

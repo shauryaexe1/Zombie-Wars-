@@ -4,8 +4,8 @@ extends CanvasLayer
 
 
 func _ready():
-	score_label.text = "High Score " + str(Global.high_score)
-	coins_label.text = "Coins Earned" + str(Global.run_coins)
+	score_label.text = "High Score - " + str(Global.high_score)
+	coins_label.text = "Coins Earned - " + str(Global.run_coins)
 	Global.save_game()
 	$GameOverMusic.play()
 

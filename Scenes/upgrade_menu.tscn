@@ -7,7 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://riwxqu2uuwoy" path="res://buttons/hover main.png" id="5_v4egn"]
 [ext_resource type="PackedScene" uid="uid://dna3rxf2cwvxl" path="res://Scenes/coins.tscn" id="7_lpopj"]
 [ext_resource type="LabelSettings" uid="uid://b5atkdx3rt028" path="res://font/new_label_settings.tres" id="7_mpwqm"]
+[ext_resource type="FontFile" uid="uid://cgx83prcugr15" path="res://font/Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="7_v4egn"]
 [ext_resource type="Texture2D" uid="uid://j02ptlgn5mjq" path="res://Assests/brackeys_platformer_assets/Screenshot 2026-09-25 at 1.17.31 PM.png" id="9_d1lbs"]
+[ext_resource type="Texture2D" uid="uid://krkfdcnoocbw" path="res://font/Screenshot 2026-09-27 at 2.36.15 PM.png" id="10_d1lbs"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_d1lbs"]
+font = ExtResource("7_v4egn")
 
 [node name="Upgrade_menu" type="Node2D" unique_id=1785644126 node_paths=PackedStringArray("coins_label", "INCREASED_HEALTH", "increased_health_label", "FIRE_RATE", "fire_rate_label", "SHIELD", "shield_label")]
 script = ExtResource("1_11363")
@@ -96,23 +101,27 @@ texture_hover = ExtResource("5_v4egn")
 
 [node name="Coins_label" type="Label" parent="." unique_id=1716841834]
 z_index = 2
-offset_left = 879.0
-offset_top = 64.0
-offset_right = 931.7215
-offset_bottom = 103.541115
+offset_left = 888.0
+offset_top = 72.0
+offset_right = 924.46265
+offset_bottom = 118.3562
 scale = Vector2(2.3860033, 1.4673338)
-label_settings = ExtResource("7_mpwqm")
+label_settings = SubResource("LabelSettings_d1lbs")
 
 [node name="Coin" parent="." unique_id=1409273429 instance=ExtResource("7_lpopj")]
-visible = false
 z_index = 2
-position = Vector2(861.00006, 87)
+position = Vector2(1079, 84)
 scale = Vector2(1.5025487, 1.5452545)
 
 [node name="UpgradeMenuBackground" type="Sprite2D" parent="." unique_id=1596873878]
-position = Vector2(576.50006, 324.75)
+position = Vector2(492, 1628)
 scale = Vector2(0.80235785, 0.817786)
 texture = ExtResource("9_d1lbs")
+
+[node name="Screenshot20260927At2_36_15Pm" type="Sprite2D" parent="." unique_id=8672555]
+position = Vector2(576.5848, 326.83325)
+scale = Vector2(0.6781731, 0.6781731)
+texture = ExtResource("10_d1lbs")
 
 [connection signal="pressed" from="Button_manager/FIRE_RATE" to="." method="_on_fire_rate_pressed"]
 [connection signal="pressed" from="Button_manager/SHIELD" to="." method="_on_shield_pressed"]

@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 func _refresh() -> void:
-	coins_label.text = "Coins: " + str(Global.coins)
+	coins_label.text = "Coins - " + str(Global.coins)
 	_setup_button(INCREASED_HEALTH, increased_health_label, Global.has_health_upgrade, Global.HEALTH_UPGRADE_COST, "Health Boost")
 	_setup_button(FIRE_RATE, fire_rate_label, Global.has_firerate_upgrade, Global.FIRERATE_UPGRADE_COST, "Fire Rate Boost")
 	_setup_button(SHIELD, shield_label, Global.has_shield_upgrade, Global.SHIELD_UPGRADE_COST, "Shield")

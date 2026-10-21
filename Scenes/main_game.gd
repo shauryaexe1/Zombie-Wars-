@@ -1,5 +1,7 @@
 extends Node2D
 
+const STARTING_ZOMBIES := 5
+
 @export var player : CharacterBody2D
 @export var score_label : Label
 @export var coins_label : Label
@@ -21,11 +23,10 @@ func _ready():
 	last_difficulty_score = 0
 	spawn_interval = 2.0
 	$Timer.wait_time = spawn_interval
-	spawn_mob()
-	spawn_mob()
-	spawn_mob()
-	spawn_mob()
-	spawn_mob()
+	
+	# Spawns the starting wave of zombies 
+	for _i in STARTING_ZOMBIES :
+		spawn_mob()
 	$Fade_Transition/AnimationPlayer.play("fade_out")
 
 

@@ -13,7 +13,7 @@ var dead: bool = false
 # Moving to next navigation point at each frame using pathfinding
 # also attack if the zombie is overlappping with the player's damage box
 func _physics_process(_delta: float) -> void:
-	if dead : 
+	if dead: 
 		return
 		
 	var distance_to_player = global_position.distance_to(player.global_position)

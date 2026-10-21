@@ -13,7 +13,7 @@ var shield: float = 0.0
 
 
 @export var movement_speed: float = 80.0
-var character_direction : Vector2
+var character_direction: Vector2
 var dead: bool = false
 @onready var animated_sprite = %AnimatedSprite2D
 
@@ -34,8 +34,8 @@ func _ready() -> void:
 	%ShieldBar.visible = max_shield > 0
 
 
-# Handles the movement input for player, the player's flippping and the animation state of each frame
-func _physics_process (delta):
+# Handles the movement input for player, the player's flipping and the animation state of each frame
+func _physics_process(delta):
 	character_direction.x = Input.get_axis("ui_left", "ui_right")
 	character_direction.y = Input.get_axis("ui_up", "ui_down")
 	

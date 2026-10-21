@@ -13,14 +13,14 @@
 [sub_resource type="LabelSettings" id="LabelSettings_d1lbs"]
 font = ExtResource("7_v4egn")
 
-[node name="Upgrade_menu" type="Node2D" unique_id=1785644126 node_paths=PackedStringArray("coins_label", "INCREASED_HEALTH", "increased_health_label", "FIRE_RATE", "fire_rate_label", "SHIELD", "shield_label")]
+[node name="Upgrade_menu" type="Node2D" unique_id=1785644126 node_paths=PackedStringArray("coins_label", "increased_health_button", "increased_health_label", "fire_rate_button", "fire_rate_label", "shield_button", "shield_label")]
 script = ExtResource("1_11363")
 coins_label = NodePath("Coins_label")
-INCREASED_HEALTH = NodePath("Button_manager/INCREASED_HEALTH")
+increased_health_button = NodePath("Button_manager/INCREASED_HEALTH")
 increased_health_label = NodePath("Button_manager/INCREASED_HEALTH/increased_health_label")
-FIRE_RATE = NodePath("Button_manager/FIRE_RATE")
+fire_rate_button = NodePath("Button_manager/FIRE_RATE")
 fire_rate_label = NodePath("Button_manager/FIRE_RATE/fire_rate_label")
-SHIELD = NodePath("Button_manager/SHIELD")
+shield_button = NodePath("Button_manager/SHIELD")
 shield_label = NodePath("Button_manager/SHIELD/shield_label")
 
 [node name="Button_manager" type="Control" parent="." unique_id=1463790312]

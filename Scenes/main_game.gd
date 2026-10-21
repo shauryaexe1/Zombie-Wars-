@@ -1,10 +1,16 @@
 extends Node2D
 
+<<<<<<< Updated upstream
 const STARTING_ZOMBIES := 5
 
 @export var player : CharacterBody2D
 @export var score_label : Label
 @export var coins_label : Label
+=======
+@export var player: CharacterBody2D
+@export var score_label: Label
+@export var coins_label: Label
+>>>>>>> Stashed changes
 
 var spawn_interval: float = 2.0
 var last_difficulty_score: int = 0
@@ -35,7 +41,7 @@ func spawn_mob():
 	var new_zombie = preload("res://Scenes/zombie.tscn").instantiate()
 	%PathFollow2D.progress_ratio = randf()
 	new_zombie.global_position = %PathFollow2D.global_position
-	new_zombie.player=player
+	new_zombie.player = player
 	add_child(new_zombie)
 
 
@@ -46,7 +52,7 @@ func _on_timer_timeout() -> void:
 
 	if Global.score_points >= last_difficulty_score + 40:
 		last_difficulty_score += 40
-		spawn_interval = max(spawn_interval -0.2, 0.5)
+		spawn_interval = max(spawn_interval - 0.2, 0.5)
 		$Timer.wait_time = spawn_interval
 		
 	

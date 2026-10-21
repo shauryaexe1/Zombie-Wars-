@@ -1,7 +1,7 @@
 extends Area2D
 
 const BASE_FIRE_COOLDOWN := 0.3
-const FIRE_RATE_MULTIPLIER:= 0.7
+const FIRE_RATE_MULTIPLIER := 0.7
 
 
 # Applies fire rate upgrade if owned then sets the timer as a one shot cooldown gate
@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 # Auto aims at the nearest zombie in range and fires when spacebar is pressed
-func _physics_process(delta):
+func _physics_process(_delta):
 	var enemies_in_range = get_overlapping_bodies()
 	if enemies_in_range.size() > 0:
 		var target_enemy = enemies_in_range.front()

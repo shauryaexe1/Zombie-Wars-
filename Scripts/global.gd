@@ -3,7 +3,7 @@ extends Node
 const SAVE_PATH := "user://save.dat"
 
 # Upgrade costs defined as constants to avoid magic number 
-const HEALTH_UPGRADE_COST:= 150
+const HEALTH_UPGRADE_COST := 150
 const FIRERATE_UPGRADE_COST := 100
 const SHIELD_UPGRADE_COST := 225
 
@@ -15,7 +15,7 @@ var score_points: int = 0:
 		
 var high_score: int = 0
 
-var coins : int = 0:
+var coins: int = 0:
 	set(value):
 		coins = value
 		_on_coins_changed()
@@ -30,6 +30,7 @@ var score_label: Label
 var coins_label: Label
 
 var music_player: AudioStreamPlayer
+
 
 func _ready() -> void:
 	load_game()
@@ -50,7 +51,7 @@ func _on_score_changed() -> void:
 		high_score = score_points
 
 
-func _on_coins_changed()  -> void:
+func _on_coins_changed() -> void:
 	if coins_label:
 		coins_label.text = "Coins : " + str(coins)
 
@@ -60,10 +61,13 @@ func add_coins(amount:int) -> void:
 	coins += amount
 	run_coins += amount
 	
+
+
 # Confirms if the player has enough coins for a purchase
-func can_afford (cost:int) -> bool:
+func can_afford(cost:int) -> bool:
 	return coins >= cost
 	
+
 
 # Deducts the cost of buying, sets the upgrade bought on the player and saves that data to the disk
 func buy_upgrade(upgrade_name: String) -> bool:
@@ -83,17 +87,18 @@ func buy_upgrade(upgrade_name: String) -> bool:
 		return false
 		
 	coins -= cost 
-	match upgrade_name :
+	match upgrade_name:
 		"health": has_health_upgrade = true
 		"firerate": has_firerate_upgrade = true
 		"shield": has_shield_upgrade = true
 		
 	save_game()
 	return true 
-	
+
+
 # Saves current coin amount, high score and upgrade data to a local save file
 func save_game() -> void:
-	var config:= ConfigFile.new()
+	var config := ConfigFile.new()
 	config.set_value("player", "coins", coins)
 	config.set_value("player", "high_score", high_score)
 	config.set_value("upgrades", "health", has_health_upgrade)
@@ -105,7 +110,7 @@ func save_game() -> void:
 # Read’s saved data from disk 
 func load_game() -> void:
 	var config := ConfigFile.new()
-	if config.load (SAVE_PATH) !=OK:
+	if config.load(SAVE_PATH) !=OK:
 		return
 	coins = config.get_value("player", "coins", 0)
 	high_score = config.get_value("player", "high_score", 0)
@@ -120,11 +125,13 @@ func consume_upgrades() -> void:
 	has_firerate_upgrade = false
 	has_shield_upgrade = false
 	save_game()
-	
+
+
 func stop_music() -> void:
 	if music_player:
 		music_player.stop()
-		
+
+
 func start_music() -> void:
 	if music_player:
 		music_player.play()

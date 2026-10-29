@@ -20,9 +20,12 @@ func _ready() -> void:
 # Updates coin display and all three upgrade button states after each purchase 
 func _refresh() -> void:
 	coins_label.text = "Coins - " + str(Global.coins)
-	_setup_button(increased_health_button, increased_health_label, Global.has_health_upgrade, Global.HEALTH_UPGRADE_COST, "Health Boost")
-	_setup_button(fire_rate_button, fire_rate_label, Global.has_firerate_upgrade, Global.FIRERATE_UPGRADE_COST, "Fire Rate Boost")
-	_setup_button(shield_button, shield_label, Global.has_shield_upgrade, Global.SHIELD_UPGRADE_COST, "Shield")
+	_setup_button(increased_health_button, increased_health_label, Global.has_health_upgrade, 
+	Global.HEALTH_UPGRADE_COST, "Health Boost")
+	_setup_button(fire_rate_button, fire_rate_label, Global.has_firerate_upgrade, 
+	Global.FIRERATE_UPGRADE_COST, "Fire Rate Boost")
+	_setup_button(shield_button, shield_label, Global.has_shield_upgrade, 
+	Global.SHIELD_UPGRADE_COST, "Shield")
 
 
 # Sets each button label and disabled state based on ownership and affordability 

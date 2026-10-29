@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var coins_label: Label
-@export var high_score_label : Label
+@export var high_score_label: Label
 
 var button_type = null
 

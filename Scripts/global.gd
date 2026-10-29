@@ -57,14 +57,14 @@ func _on_coins_changed() -> void:
 
 
 # Adds coins to both the total and the current run count
-func add_coins(amount:int) -> void:
+func add_coins(amount: int) -> void:
 	coins += amount
 	run_coins += amount
 	
 
 
 # Confirms if the player has enough coins for a purchase
-func can_afford(cost:int) -> bool:
+func can_afford(cost: int) -> bool:
 	return coins >= cost
 	
 
@@ -74,13 +74,16 @@ func buy_upgrade(upgrade_name: String) -> bool:
 	var cost := 0
 	match upgrade_name:
 		"health":
-			if has_health_upgrade: return false
+			if has_health_upgrade: 
+				return false
 			cost = HEALTH_UPGRADE_COST
 		"firerate":
-			if has_firerate_upgrade: return false
+			if has_firerate_upgrade: 
+				return false
 			cost = FIRERATE_UPGRADE_COST
 		"shield":
-			if has_shield_upgrade: return false
+			if has_shield_upgrade: 
+				return false
 			cost = SHIELD_UPGRADE_COST
 	
 	if not can_afford(cost):
@@ -88,9 +91,12 @@ func buy_upgrade(upgrade_name: String) -> bool:
 		
 	coins -= cost 
 	match upgrade_name:
-		"health": has_health_upgrade = true
-		"firerate": has_firerate_upgrade = true
-		"shield": has_shield_upgrade = true
+		"health": 
+			has_health_upgrade = true
+		"firerate": 
+			has_firerate_upgrade = true
+		"shield": 
+			has_shield_upgrade = true
 		
 	save_game()
 	return true 
@@ -110,7 +116,7 @@ func save_game() -> void:
 # Read’s saved data from disk 
 func load_game() -> void:
 	var config := ConfigFile.new()
-	if config.load(SAVE_PATH) !=OK:
+	if config.load(SAVE_PATH) != OK:
 		return
 	coins = config.get_value("player", "coins", 0)
 	high_score = config.get_value("player", "high_score", 0)

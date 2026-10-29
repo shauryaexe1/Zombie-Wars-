@@ -8,7 +8,7 @@ const FIRE_RATE_MULTIPLIER := 0.7
 func _ready() -> void:
 	$Timer.wait_time = BASE_FIRE_COOLDOWN
 	if Global.has_firerate_upgrade:
-		$Timer.wait_time *=FIRE_RATE_MULTIPLIER
+		$Timer.wait_time *= FIRE_RATE_MULTIPLIER
 	$Timer.one_shot = true
 
 

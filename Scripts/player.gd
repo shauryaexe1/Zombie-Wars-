@@ -5,6 +5,7 @@ signal health_depleted
 const BASE_MAX_HEALTH := 100.0
 const HEALTH_UPGRADE_BONUS := 50.0
 const BASE_SHIELD := 100.0
+const DAMAGE_RATE = 5.0
 
 var max_health: float = BASE_MAX_HEALTH
 var health: float = BASE_MAX_HEALTH
@@ -39,7 +40,7 @@ func _physics_process(delta):
 	character_direction.x = Input.get_axis("ui_left", "ui_right")
 	character_direction.y = Input.get_axis("ui_up", "ui_down")
 	
-	#flip
+	# Flip
 	if character_direction.x > 0:
 		animated_sprite.flip_h = false
 	elif character_direction.x < 0:
@@ -53,13 +54,15 @@ func _physics_process(delta):
 		else:
 			if not animated_sprite.animation == "Hurt":
 				animated_sprite.animation = "Idle"
-			velocity = velocity.move_toward(Vector2.ZERO,movement_speed)
+			velocity = velocity.move_toward(Vector2.ZERO,
+			movement_speed)
 	else:
-		velocity = velocity.move_toward(Vector2.ZERO,movement_speed)
+		velocity = velocity.move_toward(Vector2.ZERO,
+		movement_speed)
 	
 	move_and_slide()
 	
-	const DAMAGE_RATE = 5.0
+	
 	var overlapping_mobs = %DamageArea.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
 		take_damage(delta, DAMAGE_RATE, overlapping_mobs.size())

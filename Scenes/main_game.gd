@@ -27,7 +27,7 @@ func _ready():
 	$Timer.wait_time = spawn_interval
 	
 	# Spawns the starting wave of zombies 
-	for _i in STARTING_ZOMBIES :
+	for _i in STARTING_ZOMBIES:
 		spawn_mob()
 	$Fade_Transition/AnimationPlayer.play("fade_out")
 

@@ -11,7 +11,7 @@ var dead: bool = false
 
 
 # Moving to next navigation point at each frame using pathfinding
-# also attack if the zombie is overlappping with the player's damage box
+# Also attack if the zombie is overlappping with the player's damage box
 func _physics_process(_delta: float) -> void:
 	if dead: 
 		return
@@ -23,11 +23,11 @@ func _physics_process(_delta: float) -> void:
 		velocity = Vector2.ZERO
 		$ZombieWalkSound.stop()
 		if animated_sprite.animation != "Attack" and animated_sprite.animation != "Hurt":
-			animated_sprite.play ("Attack")
+			animated_sprite.play("Attack")
 	else:
 		var dir = to_local(nav_agent.get_next_path_position()).normalized()
-		velocity= dir * speed
-		if animated_sprite.animation!= "Walk" and animated_sprite.animation !="Hurt":
+		velocity = dir * speed
+		if animated_sprite.animation != "Walk" and animated_sprite.animation !="Hurt":
 			animated_sprite.play("Walk")
 			if not $ZombieWalkSound.playing:
 				$ZombieWalkSound.play()
@@ -39,7 +39,7 @@ func _physics_process(_delta: float) -> void:
 # Updates the navigation target to the player's current position
 func makepath() -> void:
 	nav_agent.target_position = player.global_position
-	nav_agent.avoidance_enabled= true
+	nav_agent.avoidance_enabled = true
 
 
 func _on_timer_timeout() -> void:

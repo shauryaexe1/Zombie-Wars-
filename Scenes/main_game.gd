@@ -1,16 +1,12 @@
 extends Node2D
 
-<<<<<<< Updated upstream
+
 const STARTING_ZOMBIES := 5
 
-@export var player : CharacterBody2D
-@export var score_label : Label
-@export var coins_label : Label
-=======
 @export var player: CharacterBody2D
 @export var score_label: Label
 @export var coins_label: Label
->>>>>>> Stashed changes
+
 
 var spawn_interval: float = 2.0
 var last_difficulty_score: int = 0

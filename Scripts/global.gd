@@ -51,7 +51,7 @@ func _on_score_changed() -> void:
 		high_score = score_points
 
 
-# Updates the coin lavel on the HUD henever the coin value changes
+# Updates the coin label on the HUD henever the coin value changes
 func _on_coins_changed() -> void:
 	if coins_label:
 		coins_label.text = "Coins : " + str(coins)
@@ -132,6 +132,7 @@ func consume_upgrades() -> void:
 	has_firerate_upgrade = false
 	has_shield_upgrade = false
 	save_game()
+
 
 # Stops the background menu music
 func stop_music() -> void:

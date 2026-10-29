@@ -3,7 +3,7 @@ extends CanvasLayer
 @export var coins_label: Label
 
 
-# Displays high score and coins earned this run then saves gaem data and plays game over music
+# Displays high score and coins earned this run then saves game data and plays game over music
 func _ready():
 	score_label.text = "High Score - " + str(Global.high_score)
 	coins_label.text = "Coins Earned - " + str(Global.run_coins)

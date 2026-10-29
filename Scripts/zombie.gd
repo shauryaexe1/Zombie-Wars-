@@ -1,6 +1,5 @@
 extends CharacterBody2D
-const speed = 40
-const attack_range = 6.0
+const SPEED = 40
 var health = 3
 var dead: bool = false
 
@@ -16,7 +15,6 @@ func _physics_process(_delta: float) -> void:
 	if dead: 
 		return
 		
-	var distance_to_player = global_position.distance_to(player.global_position)
 	var in_attack_range = player_damage_area.overlaps_body(self)
 	
 	if in_attack_range:
@@ -26,8 +24,8 @@ func _physics_process(_delta: float) -> void:
 			animated_sprite.play("Attack")
 	else:
 		var dir = to_local(nav_agent.get_next_path_position()).normalized()
-		velocity = dir * speed
-		if animated_sprite.animation != "Walk" and animated_sprite.animation !="Hurt":
+		velocity = dir * SPEED
+		if animated_sprite.animation != "Walk" and animated_sprite.animation != "Hurt":
 			animated_sprite.play("Walk")
 			if not $ZombieWalkSound.playing:
 				$ZombieWalkSound.play()
@@ -42,6 +40,7 @@ func makepath() -> void:
 	nav_agent.avoidance_enabled = true
 
 
+# Recalculates the path to the player each time the timer runs out 
 func _on_timer_timeout() -> void:
 	makepath()
 

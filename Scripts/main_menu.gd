@@ -14,6 +14,7 @@ func _ready() -> void:
 	
 
 
+# Starts the fade trasnition and sets the next scene to the main game 
 func _on_game_start_pressed() -> void:
 	button_type = "start_game"
 	$Fade_Transition.show()
@@ -24,6 +25,7 @@ func _on_game_start_pressed() -> void:
 	$Button_Manager/Exit.hide()
 
 
+# Starts the fade transition and sets the next scene to the upgrade menu 
 func _on_upgrade_menu_pressed() -> void:
 	button_type = "upgrade_menu"
 	$Fade_Transition.show()
@@ -32,6 +34,7 @@ func _on_upgrade_menu_pressed() -> void:
 	$"Button_Manager/Upgrade Menu".hide()
 
 
+# Closes the game 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
 	$Button_Manager/Exit.hide()

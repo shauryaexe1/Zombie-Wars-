@@ -39,20 +39,24 @@ func _setup_button(button: TextureButton, label_node: Label, owned: bool, cost: 
 
 
 
+# Buys the fire rate upgrade and refreshes the menu 
 func _on_fire_rate_pressed() -> void:
 	Global.buy_upgrade("firerate")
 	_refresh()
 
 
+# Buys the shield upgrade and refreshes the menu 
 func _on_shield_pressed() -> void:
 	Global.buy_upgrade("shield")
 	_refresh()
 
 
+# Buys the health upgrade and refreshes the menu 
 func _on_increased_health_pressed() -> void:
 	Global.buy_upgrade("health")
 	_refresh()
 
 
+# Returns the player to the main menu 
 func _on_main_menu_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
